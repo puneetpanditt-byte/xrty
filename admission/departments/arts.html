@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts Departments - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/arts/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .department-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+        .department-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .department-body {
+            padding: 30px;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .course-list li:hover {
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+        .seats-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+        .faculty-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .faculty-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(10px);
+        }
+        .faculty-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .apply-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .apply-btn:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Arts & Humanities Departments</h1>
+                    <p class="lead">Explore literature, culture, and human expression through our diverse arts programs</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Admission</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Departments</a></li>
+                            <li class="breadcrumb-item active text-white">Arts</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arts Departments Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-palette me-2"></i>Arts at Maitreyi College</h3>
+                        <p>Our Arts departments nurture creativity, critical thinking, and cultural awareness among students. Through literature, history, philosophy, and performing arts, we help students develop a deep understanding of human society and culture while honing their analytical and communication skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Arts Department Statistics</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">60</div>
+                        <p class="text-muted">B.A. (Hons.) English Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">40</div>
+                        <p class="text-muted">B.A. (Hons.) History Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">50</div>
+                        <p class="text-muted">B.A. (Hons.) Political Science Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">200</div>
+                        <p class="text-muted">B.A. Program Seats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments List -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Arts Programs</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h4>English</h4>
+                            <p class="mb-0">Literature and language studies</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Classic and contemporary literature</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Creative writing workshops</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Literary society</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Guest lectures by authors</li>
+                            </ul>
+                            <h5 class="mt-4">Core Areas</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>British Literature</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>American Literature</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Linguistics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Creative Writing</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">60 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h4>History</h4>
+                            <p class="mb-0">Exploring our past, shaping our future</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Heritage walks</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Museum visits</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Archival research</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Historical debates</li>
+                            </ul>
+                            <h5 class="mt-4">Focus Areas</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Indian History</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Modern World History</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Cultural History</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Medieval History</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">40 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h4>Political Science</h4>
+                            <p class="mb-0">Understanding governance and politics</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Model United Nations</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Debating competitions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Political simulations</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Guest lectures by politicians</li>
+                            </ul>
+                            <h5 class="mt-4">Core Subjects</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Political Theory</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>International Relations</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Public Administration</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Comparative Politics</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">50 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>Philosophy</h4>
+                            <p class="mb-0">Exploring fundamental questions</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Philosophy clubs</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Discussion forums</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Ethics workshops</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Guest lectures</li>
+                            </ul>
+                            <h5 class="mt-4">Key Areas</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Western Philosophy</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Indian Philosophy</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Ethics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Logic</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">30 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4>Hindi</h4>
+                            <p class="mb-0">Literature and cultural studies</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Kavi Sammelan</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Literary events</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cultural programs</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Translation workshops</li>
+                            </ul>
+                            <h5 class="mt-4">Focus Areas</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Hindi Literature</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Translation Studies</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Folk Literature</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Comparative Literature</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">40 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h4>Music</h4>
+                            <p class="mb-0">Classical and contemporary music</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Music room</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Concerts</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Workshops</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cultural performances</li>
+                            </ul>
+                            <h5 class="mt-4">Specializations</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Classical Vocal</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Instrumental Music</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Music Theory</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">25 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet Our Arts Faculty</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/english-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Meera Patel</h6>
+                            <small class="text-muted">Head, English Department</small>
+                            <p class="mb-0 small">Published author and critic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/history-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Vikram Singh</h6>
+                            <small class="text-muted">Head, History Department</small>
+                            <p class="mb-0 small">Medieval History Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/philosophy-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Sunita Rao</h6>
+                            <small class="text-muted">Head, Philosophy Department</small>
+                            <p class="mb-0 small">Ethics and Logic Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Information -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-info-circle me-2"></i>Eligibility Criteria</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Minimum 50% aggregate in 10+2 for honors courses</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Minimum 45% aggregate for program courses</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>English core subject mandatory</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Subject-specific requirements for honors courses</li>
+                        </ul>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="../admission/support.html" class="apply-btn">
+                            <i class="fas fa-graduation-cap me-2"></i>Apply for Arts Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Opportunities</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <h5>Writing & Publishing</h5>
+                        <p class="text-muted">Content creation, journalism, publishing</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h5>Arts & Culture</h5>
+                        <p class="text-muted">Performing arts, cultural organizations</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h5>Media & Communication</h5>
+                        <p class="text-muted">Journalism, PR, digital media</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Higher Studies</h5>
+                        <p class="text-muted">Post-graduation, research, teaching</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+        });
+
+        function loadNavigation() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

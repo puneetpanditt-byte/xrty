@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision, Mission & Objectives - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../../../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/vision/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .vision-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-card:hover {
+            transform: translateY(-10px);
+        }
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+        .mission-card::before {
+            background: var(--accent-color);
+        }
+        .objectives-card::before {
+            background: #28a745;
+        }
+        .values-card::before {
+            background: #dc3545;
+        }
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+        .objective-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .objective-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .stats-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .quote-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+        .quote-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Vision, Mission & Objectives</h1>
+                    <p class="lead">Guiding principles that shape our commitment to excellence in women's education</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../../../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">About Us</a></li>
+                            <li class="breadcrumb-item active text-white">Vision, Mission & Objectives</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="vision-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 text-center">
+                                <div class="icon-box bg-primary text-white">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <h2 class="mb-3">Our Vision</h2>
+                                <p class="lead">To be a premier institution of higher learning that empowers women through quality education, fostering intellectual growth, critical thinking, and holistic development to create responsible global citizens who contribute meaningfully to society.</p>
+                                <p>We envision a future where our students emerge as confident, competent, and compassionate leaders who drive positive change in their communities and beyond.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="vision-card mission-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-9">
+                                <h2 class="mb-3">Our Mission</h2>
+                                <p class="lead">To provide a stimulating learning environment that promotes academic excellence, research, innovation, and social responsibility among women, enabling them to realize their full potential and become agents of positive change.</p>
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Deliver quality education with innovative teaching methods</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Promote research and critical thinking</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Foster holistic development of students</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Create inclusive and diverse learning environment</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Encourage community engagement and social responsibility</li>
+                                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Prepare students for global challenges</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <div class="icon-box bg-warning text-white">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Objectives</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="vision-card objectives-card">
+                        <div class="objective-item">
+                            <h4><i class="fas fa-graduation-cap text-primary me-2"></i>Academic Excellence</h4>
+                            <p>To maintain high standards of academic rigor and provide quality education that meets global benchmarks, fostering intellectual curiosity and lifelong learning among students.</p>
+                        </div>
+                        <div class="objective-item">
+                            <h4><i class="fas fa-microscope text-success me-2"></i>Research & Innovation</h4>
+                            <p>To promote a culture of research and innovation, encouraging faculty and students to engage in cutting-edge research that contributes to knowledge creation and societal development.</p>
+                        </div>
+                        <div class="objective-item">
+                            <h4><i class="fas fa-users text-warning me-2"></i>Women Empowerment</h4>
+                            <p>To empower women through education, leadership opportunities, and skill development, enabling them to break barriers and achieve excellence in all spheres of life.</p>
+                        </div>
+                        <div class="objective-item">
+                            <h4><i class="fas fa-globe text-info me-2"></i>Global Competitiveness</h4>
+                            <p>To prepare students for global challenges by developing cross-cultural competencies, language skills, and international perspectives through collaborations and exchange programs.</p>
+                        </div>
+                        <div class="objective-item">
+                            <h4><i class="fas fa-hands-helping text-danger me-2"></i>Social Responsibility</h4>
+                            <p>To inculcate values of social responsibility, environmental consciousness, and community service, encouraging students to contribute positively to society and sustainable development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Core Values</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h5>Excellence</h5>
+                        <p>Striving for the highest standards in teaching, research, and service to society.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h5>Integrity</h5>
+                        <p>Upholding ethical principles and honesty in all our endeavors and interactions.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h5>Innovation</h5>
+                        <p>Embracing creativity and new ideas to enhance learning and research outcomes.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5>Inclusivity</h5>
+                        <p>Creating a diverse and inclusive environment where everyone feels valued and respected.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h5>Sustainability</h5>
+                        <p>Promoting environmental consciousness and sustainable practices in all activities.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5>Collaboration</h5>
+                        <p>Fostering teamwork and partnerships to achieve common goals and shared success.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5>Accountability</h5>
+                        <p>Taking responsibility for our actions and decisions with transparency and fairness.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h5>Leadership</h5>
+                        <p>Developing leadership qualities and inspiring others to achieve their full potential.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">55+</div>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">25,000+</div>
+                        <p>Alumni Worldwide</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <p>Research Publications</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <p>Industry Partnerships</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="quote-box">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <h3 class="text-center mb-4">Our Commitment</h3>
+                        <p class="text-center fs-5">"We are committed to creating an educational ecosystem where every woman discovers her potential, pursues her passions, and transforms into a leader who makes a difference in the world. Our vision extends beyond academic excellence to nurture compassionate, innovative, and responsible global citizens."</p>
+                        <p class="text-center text-muted mt-4">- Maitreyi College Leadership</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.vision-card, .objective-item, .value-item, .stat-item').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate statistics on scroll
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        function loadNavigation() {
+            fetch('../../../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = stat.textContent;
+                const number = parseInt(target.replace(/\D/g, ''));
+                const suffix = target.replace(/\d/g, '');
+                let current = 0;
+                const increment = number / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= number) {
+                        current = number;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 30);
+            });
+        }
+    </script>
+</body>
+</html>

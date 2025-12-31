@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commerce Departments - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/commerce/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .department-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        .department-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .department-body {
+            padding: 30px;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .course-list li:hover {
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+        .seats-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+        .faculty-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .faculty-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(10px);
+        }
+        .faculty-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .apply-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .apply-btn:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Commerce Departments</h1>
+                    <p class="lead">Build a strong foundation in business and commerce with our comprehensive programs</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Admission</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Departments</a></li>
+                            <li class="breadcrumb-item active text-white">Commerce</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commerce Departments Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-chart-line me-2"></i>Commerce at Maitreyi College</h3>
+                        <p>Our Commerce departments are dedicated to developing business acumen, financial literacy, and entrepreneurial skills among students. With experienced faculty and industry connections, we prepare students for successful careers in business, finance, and management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Commerce Department Statistics</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">120</div>
+                        <p class="text-muted">B.Com. (Hons.) Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">180</div>
+                        <p class="text-muted">B.Com. Program Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-number">60</div>
+                        <p class="text-muted">B.Com. (F&T) Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">80</div>
+                        <p class="text-muted">Business Economics Seats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments List -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Commerce Programs</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h4>B.Com. (Hons.)</h4>
+                            <p class="mb-0">Building business leaders of tomorrow</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Comprehensive curriculum</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Practical training</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Industry exposure</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Guest lectures</li>
+                            </ul>
+                            <h5 class="mt-4">Core Subjects</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Financial Accounting</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Business Mathematics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Business Statistics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Business Law</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">120 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>B.Com. Program</h4>
+                            <p class="mb-0">Broad-based commerce education</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Flexible subject choices</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Foundation courses</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Skill development</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Elective options</li>
+                            </ul>
+                            <h5 class="mt-4">Subject Combinations</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Commerce + Economics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Commerce + Mathematics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Commerce + Computer</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">180 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>B.Com. (F&T)</h4>
+                            <p class="mb-0">Focus on Finance and Taxation</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Specialized curriculum</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Taxation focus</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Financial analysis</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Audit training</li>
+                            </ul>
+                            <h5 class="mt-4">Key Areas</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Direct Tax Laws</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Indirect Tax Laws</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Financial Management</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">60 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h4>B.A. (Hons.) Business Economics</h4>
+                            <p class="mb-0">Understanding economic principles</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Program Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Economic theory</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Business applications</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Research projects</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Case studies</li>
+                            </ul>
+                            <h5 class="mt-4">Core Subjects</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Microeconomics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Macroeconomics</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Business Economics</span>
+                                </li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <span class="seats-badge">80 Seats Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet Our Commerce Faculty</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/commerce-prof1/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Prof. Anita Sharma</h6>
+                            <small class="text-muted">Head, Commerce Department</small>
+                            <p class="mb-0 small">Expert in Financial Management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/commerce-prof2/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Rajesh Kumar</h6>
+                            <small class="text-muted">Associate Professor</small>
+                            <p class="mb-0 small">Taxation Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/commerce-prof3/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Priya Singh</h6>
+                            <small class="text-muted">Assistant Professor</small>
+                            <p class="mb-0 small">Business Economics Expert</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Information -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-info-circle me-2"></i>Eligibility Criteria</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Minimum 55% aggregate in 10+2 for B.Com. (Hons.)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Minimum 50% aggregate in 10+2 for B.Com. Program</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Mathematics/Accountancy/Business Studies preferred</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>English core subject mandatory</li>
+                        </ul>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="../admission/support.html" class="apply-btn">
+                            <i class="fas fa-graduation-cap me-2"></i>Apply for Commerce Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Opportunities</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h5>Banking & Finance</h5>
+                        <p class="text-muted">Leading banks and financial institutions</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5>Corporate Sector</h5>
+                        <p class="text-muted">MNCs and Indian companies</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h5>CA & CS</h5>
+                        <p class="text-muted">Chartered Accountant & Company Secretary</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="department-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Higher Studies</h5>
+                        <p class="text-muted">MBA, M.Com, and other programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+        });
+
+        function loadNavigation() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

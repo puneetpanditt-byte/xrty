@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Staff - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/staff/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .staff-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        .staff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .staff-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .staff-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .staff-body {
+            padding: 30px;
+        }
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .faculty-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .faculty-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .faculty-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        .faculty-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .faculty-designation {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .faculty-email {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .faculty-email:hover {
+            text-decoration: underline;
+        }
+        .department-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .achievement-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .achievement-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .achievement-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Teaching Staff</h1>
+                    <p class="lead">Meet our dedicated faculty members committed to academic excellence</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Governance</a></li>
+                            <li class="breadcrumb-item active text-white">Teaching Staff</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Faculty Strength</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">150+</div>
+                        <p class="text-muted">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">50+</div>
+                        <p class="text-muted">PhD Holders</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">80%</div>
+                        <p class="text-muted">With Postgraduate Degrees</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">15</div>
+                        <p class="text-muted">Years Average Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Filter -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Browse by Department</h2>
+            <div class="department-filter">
+                <button class="filter-btn active" onclick="filterStaff('all')">All Departments</button>
+                <button class="filter-btn" onclick="filterStaff('science')">Science</button>
+                <button class="filter-btn" onclick="filterStaff('commerce')">Commerce</button>
+                <button class="filter-btn" onclick="filterStaff('arts')">Arts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty List -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="faculty-list" id="facultyList">
+                <!-- Science Faculty -->
+                <div class="faculty-item" data-department="science">
+                    <img src="https://picsum.photos/seed/physics-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Rajesh Kumar</h5>
+                        <p class="faculty-designation">Professor, Physics</p>
+                        <p class="faculty-email">rajesh.kumar@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-1">Physics</span>
+                            <span class="badge bg-success me-1">20+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="science">
+                    <img src="https://picsum.photos/seed/chemistry-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Priya Singh</h5>
+                        <p class="faculty-designation">Associate Professor, Chemistry</p>
+                        <p class="faculty-email">priya.singh@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-1">Chemistry</span>
+                            <span class="badge bg-success me-1">15+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="science">
+                    <img src="https://picsum.photos/seed/botany-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Amit Sharma</h5>
+                        <p class="faculty-designation">Assistant Professor, Botany</p>
+                        <p class="faculty-email">amit.sharma@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-1">Botany</span>
+                            <span class="badge bg-success me-1">12+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="science">
+                    <img src="https://picsum.photos/seed/math-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Vikram Desai</h5>
+                        <p class="faculty-designation">Assistant Professor, Mathematics</p>
+                        <p class="faculty-email">vikram.desai@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-1">Mathematics</span>
+                            <span class="badge bg-success me-1">18+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="science">
+                    <img src="https://picsum.photos/seed/cs-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Neha Gupta</h5>
+                        <p class="faculty-designation">Assistant Professor, Computer Science</p>
+                        <p class="faculty-email">neha.gupta@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-primary me-1">Computer Science</span>
+                            <span class="badge bg-success me-1">10+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commerce Faculty -->
+                <div class="faculty-item" data-department="commerce">
+                    <img src="https://picsum.photos/seed/commerce-prof1/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Prof. Anita Sharma</h5>
+                        <p class="faculty-designation">Associate Professor, Commerce</p>
+                        <p class="faculty-email">anita.sharma@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-warning me-1">Commerce</span>
+                            <span class="badge bg-success me-1">25+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="commerce">
+                    <img src="https://picsum.photos/seed/commerce-prof2/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Rajesh Kumar</h5>
+                        <p class="faculty-designation">Assistant Professor, Business Economics</p>
+                        <p class="faculty-email">rajesh.kumar@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-warning me-1">Business Economics</span>
+                            <span class="badge bg-success me-1">20+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="commerce">
+                    <img src="https://picsum.photos/seed/commerce-prof3/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Priya Singh</h5>
+                        <p class="faculty-designation">Assistant Professor, Commerce</p>
+                        <p class="faculty-email">priya.singh@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-warning me-1">Finance</span>
+                            <span class="badge bg-success me-1">15+ Years</span>
+                            <span class="badge bg-info me-1">M.Phil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arts Faculty -->
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/english-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Meera Patel</h5>
+                        <p class="faculty-designation">Head, English Department</p>
+                        <p class="faculty-email">meera.patel@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">English</span>
+                            <span class="badge bg-success me-1">20+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/history-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Vikram Singh</h5>
+                        <p class="faculty-designation">Associate Professor, History</p>
+                        <p class="faculty-email">vikram.singh@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">History</span>
+                            <span class="badge bg-success me-1">18+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/polsci-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Sunita Rao</h5>
+                        <p class="faculty-designation">Assistant Professor, Political Science</p>
+                        <p class="faculty-email">sunita.rao@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">Political Science</span>
+                            <span class="badge bg-success me-1">15+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/philosophy-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Anita Sharma</h5>
+                        <p class="faculty-designation">Assistant Professor, Political Science</p>
+                        <p class="faculty-email">anita.sharma@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">Political Science</span>
+                            <span class="badge bg-success me-1">12+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/hindi-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Meera Patel</h5>
+                        <p class="faculty-designation">Assistant Professor, Hindi</p>
+                        <p class="faculty-email">meera.patel@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">Hindi</span>
+                            <span class="badge bg-success me-1">15+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="faculty-item" data-department="arts">
+                    <img src="https://picsum.photos/seed/music-prof/150/150.jpg" alt="Faculty" class="faculty-avatar">
+                    <div>
+                        <h5 class="faculty-name">Dr. Ramesh Kumar</h5>
+                        <p class="faculty-designation">Assistant Professor, Music</p>
+                        <p class="faculty-email">ramesh.kumar@maitreyi.ac.in</p>
+                        <div class="mt-2">
+                            <span class="badge bg-info me-1">Music</span>
+                            <span class="badge bg-success me-1">20+ Years</span>
+                            <span class="badge bg-info me-1">PhD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Faculty Achievements</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="achievement-card">
+                        <h5><i class="fas fa-trophy text-warning me-2"></i>Research Excellence</h5>
+                        <p>Our faculty members have published 100+ research papers in national and international journals, contributing significantly to the academic discourse.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Last updated: December 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="achievement-card">
+                        <h5><i class="fas fa-award text-primary me-2"></i>Teaching Excellence</h5>
+                        <p>Several faculty members have received awards for innovative teaching methods and student mentorship.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Last updated: December 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="achievement-card">
+                        <h5><i class="fas fa-book text-success me-2"></i>Publications</h5>
+                        <p>Faculty members regularly publish books, chapters, and research articles in reputed journals.</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Last updated: December 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Faculty</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-card">
+                        <h4 class="mb-4">Faculty Office</h4>
+                        <p class="mb-4">For any queries related to faculty, academic matters, or research collaborations, please contact our faculty office.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Email</h6>
+                                <p class="mb-0">faculty@maitreyi.ac.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Phone</h6>
+                                <p class="mb-0">+91 11 1234 5682</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Office Hours</h6>
+                                <p class="mb-0">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="mailto:faculty@maitreyi.ac.in" class="btn btn-primary">
+                            <i class="fas fa-envelope me-2"></i>Contact Faculty Office
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.staff-card, .faculty-item, .stats-card, .achievement-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Initialize filter functionality
+            initializeFilter();
+        });
+
+        function loadNavigation() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function initializeFilter() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const facultyItems = document.querySelectorAll('.faculty-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('onclick').match(/filterStaff\('(.*)\)/)[1];
+                    
+                    facultyItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-department') === filter) {
+                            item.style.display = 'block';
+                            item.classList.add('fade-in');
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>

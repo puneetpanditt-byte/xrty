@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/departments/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .department-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .science-header { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .commerce-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .arts-header { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        
+        .department-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .department-body {
+            padding: 30px;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .course-list li:hover {
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+        .faculty-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .faculty-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(10px);
+        }
+        .faculty-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .tab-content {
+            margin-top: 30px;
+        }
+        .nav-pills .nav-link {
+            border-radius: 25px;
+            padding: 10px 25px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-pills .nav-link.active {
+            background: var(--primary-color);
+        }
+        .achievement-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Academic Departments</h1>
+                    <p class="lead">Explore our diverse range of departments offering quality education in various disciplines</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">About Us</a></li>
+                            <li class="breadcrumb-item active text-white">Departments</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">18</div>
+                        <p class="text-muted">Academic Departments</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">150+</div>
+                        <p class="text-muted">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">25</div>
+                        <p class="text-muted">Programs Offered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">3000+</div>
+                        <p class="text-muted">Students Enrolled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Navigation -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Browse Departments</h2>
+                <p class="text-muted">Click on any department to explore courses and faculty</p>
+            </div>
+            <ul class="nav nav-pills justify-content-center mb-4" id="departmentTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="science-tab" data-bs-toggle="tab" data-bs-target="#science" type="button" role="tab">
+                        <i class="fas fa-flask me-2"></i>Science
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="commerce-tab" data-bs-toggle="tab" data-bs-target="#commerce" type="button" role="tab">
+                        <i class="fas fa-chart-line me-2"></i>Commerce
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="arts-tab" data-bs-toggle="tab" data-bs-target="#arts" type="button" role="tab">
+                        <i class="fas fa-palette me-2"></i>Arts
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="departmentTabContent">
+                <!-- Science Departments -->
+                <div class="tab-pane fade show active" id="science" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-atom"></i>
+                                    </div>
+                                    <h4>Physics</h4>
+                                    <p class="mb-0">Exploring the fundamental laws of nature</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Physics</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Physics</li>
+                                        <li><i class="fas fa-book me-2"></i>Physical Sciences</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Well-equipped Labs</div>
+                                    <div class="achievement-badge">Research Projects</div>
+                                    <div class="achievement-badge">Guest Lectures</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <h4>Chemistry</h4>
+                                    <p class="mb-0">Understanding molecular interactions</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Chemistry</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Chemistry</li>
+                                        <li><i class="fas fa-book me-2"></i>Applied Chemistry</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Modern Labs</div>
+                                    <div class="achievement-badge">Industry Tie-ups</div>
+                                    <div class="achievement-badge">Publications</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-dna"></i>
+                                    </div>
+                                    <h4>Botany</h4>
+                                    <p class="mb-0">Study of plant life and ecosystems</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Botany</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Botany</li>
+                                        <li><i class="fas fa-book me-2"></i>Life Sciences</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Herbarium</div>
+                                    <div class="achievement-badge">Botanical Garden</div>
+                                    <div class="achievement-badge">Research Grants</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-microscope"></i>
+                                    </div>
+                                    <h4>Zoology</h4>
+                                    <p class="mb-0">Exploring animal life and behavior</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Zoology</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Zoology</li>
+                                        <li><i class="fas fa-book me-2"></i>Animal Sciences</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Museum</div>
+                                    <div class="achievement-badge">Field Work</div>
+                                    <div class="achievement-badge">Wildlife Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <h4>Mathematics</h4>
+                                    <p class="mb-0">The language of the universe</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Mathematics</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Mathematics</li>
+                                        <li><i class="fas fa-book me-2"></i>Applied Mathematics</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Math Lab</div>
+                                    <div class="achievement-badge">Competitions</div>
+                                    <div class="achievement-badge">Research Papers</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header science-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <h4>Computer Science</h4>
+                                    <p class="mb-0">Digital innovation and technology</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Computer Science</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Sc. Program Computer Science</li>
+                                        <li><i class="fas fa-book me-2"></i>Data Science</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Computer Labs</div>
+                                    <div class="achievement-badge">Coding Club</div>
+                                    <div class="achievement-badge">Hackathons</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commerce Departments -->
+                <div class="tab-pane fade" id="commerce" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="department-card">
+                                <div class="department-header commerce-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <h4>Commerce</h4>
+                                    <p class="mb-0">Building business leaders of tomorrow</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.Com. (Hons.)</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Com. Program</li>
+                                        <li><i class="fas fa-book me-2"></i>B.Com. (F&T)</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Industry Visits</div>
+                                    <div class="achievement-badge">Stock Market Lab</div>
+                                    <div class="achievement-badge">Entrepreneurship Cell</div>
+                                    <div class="achievement-badge">CA Coaching</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="department-card">
+                                <div class="department-header commerce-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-chart-pie"></i>
+                                    </div>
+                                    <h4>Business Economics</h4>
+                                    <p class="mb-0">Understanding economic principles</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) Business Economics</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program Business Economics</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Research Projects</div>
+                                    <div class="achievement-badge">Guest Lectures</div>
+                                    <div class="achievement-badge">Case Studies</div>
+                                    <div class="achievement-badge">Internships</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arts Departments -->
+                <div class="tab-pane fade" id="arts" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-book-open"></i>
+                                    </div>
+                                    <h4>English</h4>
+                                    <p class="mb-0">Literature and language studies</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) English</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program English</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Literary Club</div>
+                                    <div class="achievement-badge">Creative Writing</div>
+                                    <div class="achievement-badge">Debates</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <h4>History</h4>
+                                    <p class="mb-0">Exploring our past, shaping our future</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) History</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program History</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Heritage Walks</div>
+                                    <div class="achievement-badge">Museum Visits</div>
+                                    <div class="achievement-badge">Research Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-globe-asia"></i>
+                                    </div>
+                                    <h4>Political Science</h4>
+                                    <p class="mb-0">Understanding governance and politics</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) Political Science</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program Political Science</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Model UN</div>
+                                    <div class="achievement-badge">Debating Society</div>
+                                    <div class="achievement-badge">Internships</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <h4>Philosophy</h4>
+                                    <p class="mb-0">Exploring fundamental questions</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) Philosophy</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program Philosophy</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Seminars</div>
+                                    <div class="achievement-badge">Discussion Forums</div>
+                                    <div class="achievement-badge">Ethics Workshops</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <h4>Hindi</h4>
+                                    <p class="mb-0">Literature and cultural studies</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) Hindi</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program Hindi</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Kavi Sammelan</div>
+                                    <div class="achievement-badge">Literary Events</div>
+                                    <div class="achievement-badge">Cultural Programs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="department-card">
+                                <div class="department-header arts-header">
+                                    <div class="department-icon">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <h4>Music</h4>
+                                    <p class="mb-0">Classical and contemporary music</p>
+                                </div>
+                                <div class="department-body">
+                                    <h5>Programs Offered</h5>
+                                    <ul class="course-list">
+                                        <li><i class="fas fa-book me-2"></i>B.A. (Hons.) Music</li>
+                                        <li><i class="fas fa-book me-2"></i>B.A. Program Music</li>
+                                    </ul>
+                                    <h5 class="mt-4">Department Highlights</h5>
+                                    <div class="achievement-badge">Music Room</div>
+                                    <div class="achievement-badge">Concerts</div>
+                                    <div class="achievement-badge">Workshops</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Faculty -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Faculty Members</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/faculty1/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Rajesh Kumar</h6>
+                            <small class="text-muted">Head, Physics Department</small>
+                            <p class="mb-0 small">20+ years of research experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/faculty2/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Prof. Anita Sharma</h6>
+                            <small class="text-muted">Head, Commerce Department</small>
+                            <p class="mb-0 small">Expert in Financial Management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/faculty3/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Priya Singh</h6>
+                            <small class="text-muted">Head, English Department</small>
+                            <p class="mb-0 small">Published author and critic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.department-card, .faculty-item, .stats-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        function loadNavigation() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

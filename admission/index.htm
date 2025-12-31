@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/admission/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .admission-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .admission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .card-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .courses-header { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .prospectus-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .support-header { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .fees-header { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .card-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list li i {
+            color: var(--success-color);
+            margin-right: 10px;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .quick-links {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        .quick-links h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .quick-links a {
+            display: block;
+            padding: 12px 0;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .quick-links a:hover {
+            color: var(--primary-color);
+            padding-left: 10px;
+            background: #f8f9fa;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: white;
+            opacity: 0.3;
+        }
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid white;
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+        .year-badge {
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Admission</h1>
+                    <p class="lead">Your gateway to quality education and women's empowerment</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item active text-white">Admission</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Statistics -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Statistics</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">25</div>
+                        <p class="text-muted">Programs Offered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">2500+</div>
+                        <p class="text-muted">Total Seats</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">95%</div>
+                        <p class="text-muted">Placement Rate</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">55+</div>
+                        <p class="text-muted">Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Services -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Services</h2>
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header courses-header">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Courses Offered</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Explore Our Programs</h5>
+                            <p class="card-description">Discover our diverse range of undergraduate programs across Science, Commerce, and Arts streams.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>25+ Programs</li>
+                                <li><i class="fas fa-check"></i>18 Departments</li>
+                                <li><i class="fas fa-check"></i>150+ Faculty</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/courses.html" class="btn btn-primary">
+                                    <i class="fas fa-arrow-right me-2"></i>View All Courses
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header prospectus-header">
+                            <div class="card-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>College Prospectus</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Complete Information</h5>
+                            <p class="card-description">Download our comprehensive prospectus to learn everything about Maitreyi College.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>College History & Heritage</li>
+                                <li><i class="fas fa-check"></i>Vision, Mission & Values</li>
+                                <li><i class="fas fa-check"></i>Academic Programs</li>
+                                <li><i class="fas fa-check"></i>Infrastructure & Facilities</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/admission/prospectus.html" class="btn btn-primary">
+                                    <i class="fas fa-download me-2"></i>Download Prospectus
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header support-header">
+                            <div class="card-icon">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                            <h4>Admission Support</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Get Help & Guidance</h5>
+                            <p class="card-description">Complete support for your admission journey with expert guidance and assistance.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>Counselling & Guidance</li>
+                                <li><i class="fas fa-check"></i>Application Assistance</li>
+                                <li><i class="fas fa-check"></i>Post-Admission Support</li>
+                                <li><i class="fas fa-check"></i>FAQ & Help Desk</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/admission/support.html" class="btn btn-primary">
+                                    <i class="fas fa-headset me-2"></i>Get Support
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header fees-header">
+                            <div class="card-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                            </div>
+                            <h4>Fee Structure</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Transparent & Affordable</h5>
+                            <p class="card-description">Detailed fee structure for all programs with flexible payment options.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>Annual & Semester Fees</li>
+                                <li><i class="fas fa-check"></i>One-time Charges</li>
+                                <li><i class="fas fa-check"></i>Payment Methods</li>
+                                <li><i class="fas fa-check"></i>Scholarship Information</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/admission/fees.html" class="btn btn-primary">
+                                    <i class="fas fa-calculator me-2"></i>View Fee Structure
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department-wise Admission -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Explore by Department</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header courses-header">
+                            <div class="card-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>Science Programs</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Science & Technology</h5>
+                            <p class="card-description">Explore our world-class science programs with state-of-the-art laboratories.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>Physics, Chemistry, Botany, Zoology</li>
+                                <li><i class="fas fa-check"></i>Mathematics & Computer Science</li>
+                                <li><i class="fas fa-check"></i>Research Opportunities</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/departments/science.html" class="btn btn-primary">
+                                    <i class="fas fa-microscope me-2"></i>Science Departments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header prospectus-header">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Commerce Programs</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Business & Finance</h5>
+                            <p class="card-description">Build a strong foundation in business and commerce with our comprehensive programs.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>B.Com. (Hons.) & B.Com. Program</li>
+                                <li><i class="fas fa-check"></i>Business Economics</li>
+                                <li><i class="fas fa-check"></i>Finance & Taxation</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/departments/commerce.html" class="btn btn-primary">
+                                    <i class="fas fa-coins me-2"></i>Commerce Departments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="admission-card">
+                        <div class="card-header courses-header">
+                            <div class="card-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Arts & Humanities</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Literature & Culture</h5>
+                            <p class="card-description">Explore literature, culture, and human expression through our diverse arts programs.</p>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check"></i>English, History, Political Science</li>
+                                <li><i class="fas fa-check"></i>Philosophy & Hindi</li>
+                                <li><i class="fas fa-check"></i>Music & Cultural Studies</li>
+                            </ul>
+                            <div class="text-center mt-4">
+                                <a href="admission/departments/arts.html" class="btn btn-primary">
+                                    <i class="fas fa-book-open me-2"></i>Arts Departments
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year-badge">March 2026</div>
+                    <h5>Admission Process Begins</h5>
+                    <p>Online registration opens and application submission starts for all programs.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year-badge">April 2026</div>
+                    <h5>Document Verification</h5>
+                    <p>Submission and verification of required documents for shortlisted candidates.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year-badge">May 2026</div>
+                    <h5>First Merit List</h5>
+                    <p>Declaration of first merit list and commencement of admission process.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="year-badge">June 2026</div>
+                    <h5>Classes Commence</h5>
+                    <p>Academic session begins with orientation programs for new students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Quick Links</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="quick-links">
+                        <h4><i class="fas fa-link me-2"></i>Important Links</h4>
+                        <a href="admission/courses.html" class="text-decoration-none">
+                            <i class="fas fa-graduation-cap me-2"></i> Courses Offered
+                        </a>
+                        <a href="admission/admission/prospectus.html" class="text-decoration-none">
+                            <i class="fas fa-book me-2"></i> College Prospectus
+                        </a>
+                        <a href="admission/admission/fees.html" class="text-decoration-none">
+                            <i class="fas fa-rupee-sign me-2"></i> Fee Structure
+                        </a>
+                        <a href="admission/admission/support.html" class="text-decoration-none">
+                            <i class="fas fa-life-ring me-2"></i> Admission Support
+                        </a>
+                        <a href="admission/departments/science.html" class="text-decoration-none">
+                            <i class="fas fa-flask me-2"></i> Science Departments
+                        </a>
+                        <a href="admission/departments/commerce.html" class="text-decoration-none">
+                            <i class="fas fa-chart-line me-2"></i> Commerce Departments
+                        </a>
+                        <a href="admission/departments/arts.html" class="text-decoration-none">
+                            <i class="fas fa-palette me-2"></i> Arts Departments
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.admission-card, .stats-card, .timeline-item').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate statistics on scroll
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        function loadNavigation() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stats-number');
+            statNumbers.forEach(stat => {
+                const target = stat.textContent;
+                const number = parseInt(target.replace(/\D/g, ''));
+                const suffix = target.replace(/\d/g, '');
+                let current = 0;
+                const increment = number / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= number) {
+                        current = number;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 30);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/fees/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .fee-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .fee-table thead {
+            background: var(--primary-color);
+            color: white;
+        }
+        .fee-table th {
+            padding: 15px;
+            font-weight: 600;
+            border: none;
+        }
+        .fee-table td {
+            padding: 15px;
+            vertical-align: middle;
+            border-bottom: 1px solid #eee;
+        }
+        .fee-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+        .amount {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .info-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        .info-list li i {
+            color: var(--success-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        .payment-method {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .payment-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .download-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Fee Structure</h1>
+                    <p class="lead">Transparent and affordable fee structure for all programs</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Admission</a></li>
+                            <li class="breadcrumb-item active text-white">Fee Structure</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Tables -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <h2 class="text-center mb-4">Undergraduate Programs - Academic Year 2025-26</h2>
+                </div>
+            </div>
+
+            <!-- Science Programs -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-3"><i class="fas fa-flask me-2"></i>Science Programs</h3>
+                    <div class="table-responsive">
+                        <table class="table fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Annual Fees</th>
+                                    <th>Per Semester</th>
+                                    <th>One-time (1st Year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Physics</strong></td>
+                                    <td class="amount">₹12,000</td>
+                                    <td class="amount">₹6,000</td>
+                                    <td class="amount">₹15,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Chemistry</strong></td>
+                                    <td class="amount">₹12,000</td>
+                                    <td class="amount">₹6,000</td>
+                                    <td class="amount">₹15,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Botany</strong></td>
+                                    <td class="amount">₹11,500</td>
+                                    <td class="amount">₹5,750</td>
+                                    <td class="amount">₹15,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Zoology</strong></td>
+                                    <td class="amount">₹11,500</td>
+                                    <td class="amount">₹5,750</td>
+                                    <td class="amount">₹15,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Mathematics</strong></td>
+                                    <td class="amount">₹11,000</td>
+                                    <td class="amount">₹5,500</td>
+                                    <td class="amount">₹14,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. (Hons.) Computer Science</strong></td>
+                                    <td class="amount">₹15,000</td>
+                                    <td class="amount">₹7,500</td>
+                                    <td class="amount">₹18,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. Program (Physical Sciences)</strong></td>
+                                    <td class="amount">₹10,500</td>
+                                    <td class="amount">₹5,250</td>
+                                    <td class="amount">₹14,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. Program (Life Sciences)</strong></td>
+                                    <td class="amount">₹10,000</td>
+                                    <td class="amount">₹5,000</td>
+                                    <td class="amount">₹13,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Sc. Program (Mathematical Sciences)</strong></td>
+                                    <td class="amount">₹10,500</td>
+                                    <td class="amount">₹5,250</td>
+                                    <td class="amount">₹14,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commerce Programs -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-3"><i class="fas fa-chart-line me-2"></i>Commerce Programs</h3>
+                    <div class="table-responsive">
+                        <table class="table fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Annual Fees</th>
+                                    <th>Per Semester</th>
+                                    <th>One-time (1st Year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>B.Com. (Hons.)</strong></td>
+                                    <td class="amount">₹13,000</td>
+                                    <td class="amount">₹6,500</td>
+                                    <td class="amount">₹16,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Com. Program</strong></td>
+                                    <td class="amount">₹11,500</td>
+                                    <td class="amount">₹5,750</td>
+                                    <td class="amount">₹15,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.Com. (F&T)</strong></td>
+                                    <td class="amount">₹12,500</td>
+                                    <td class="amount">₹6,250</td>
+                                    <td class="amount">₹16,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) Business Economics</strong></td>
+                                    <td class="amount">₹12,000</td>
+                                    <td class="amount">₹6,000</td>
+                                    <td class="amount">₹15,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arts Programs -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <h3 class="mb-3"><i class="fas fa-palette me-2"></i>Arts & Humanities Programs</h3>
+                    <div class="table-responsive">
+                        <table class="table fee-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Annual Fees</th>
+                                    <th>Per Semester</th>
+                                    <th>One-time (1st Year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) English</strong></td>
+                                    <td class="amount">₹10,500</td>
+                                    <td class="amount">₹5,250</td>
+                                    <td class="amount">₹14,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) History</strong></td>
+                                    <td class="amount">₹10,000</td>
+                                    <td class="amount">₹5,000</td>
+                                    <td class="amount">₹13,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) Political Science</strong></td>
+                                    <td class="amount">₹10,000</td>
+                                    <td class="amount">₹5,000</td>
+                                    <td class="amount">₹13,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) Philosophy</strong></td>
+                                    <td class="amount">₹9,500</td>
+                                    <td class="amount">₹4,750</td>
+                                    <td class="amount">₹13,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) Hindi</strong></td>
+                                    <td class="amount">₹9,500</td>
+                                    <td class="amount">₹4,750</td>
+                                    <td class="amount">₹13,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. (Hons.) Music</strong></td>
+                                    <td class="amount">₹11,000</td>
+                                    <td class="amount">₹5,500</td>
+                                    <td class="amount">₹14,500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B.A. Program</strong></td>
+                                    <td class="amount">₹9,000</td>
+                                    <td class="amount">₹4,500</td>
+                                    <td class="amount">₹12,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Components -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Fee Components</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4><i class="fas fa-info-circle me-2"></i>Included in Annual Fees</h4>
+                        <ul class="info-list">
+                            <li><i class="fas fa-check"></i>Tuition Fees</li>
+                            <li><i class="fas fa-check"></i>Library Charges</li>
+                            <li><i class="fas fa-check"></i>Laboratory Fees (for Science courses)</li>
+                            <li><i class="fas fa-check"></i>Computer Lab Fees</li>
+                            <li><i class="fas fa-check"></i>Development Fund</li>
+                            <li><i class="fas fa-check"></i>Student Activity Fees</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4><i class="fas fa-plus-circle me-2"></i>One-time Charges (1st Year Only)</h4>
+                        <ul class="info-list">
+                            <li><i class="fas fa-check"></i>Admission Fee: ₹1,000</li>
+                            <li><i class="fas fa-check"></i>University Enrollment Fee: ₹500</li>
+                            <li><i class="fas fa-check"></i>Identity Card: ₹200</li>
+                            <li><i class="fas fa-check"></i>Security Deposit (Refundable): ₹2,000</li>
+                            <li><i class="fas fa-check"></i>Caution Money (Library): ₹1,000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Payment Methods</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="payment-method">
+                        <div class="payment-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h5>Bank Challan</h5>
+                        <p class="text-muted">Pay through designated bank branches</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="payment-method">
+                        <div class="payment-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h5>Online Payment</h5>
+                        <p class="text-muted">Credit/Debit cards & Net Banking</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="payment-method">
+                        <div class="payment-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h5>UPI Payment</h5>
+                        <p class="text-muted">Google Pay, PhonePe, PayTM</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="payment-method">
+                        <div class="payment-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h5>Demand Draft</h5>
+                        <p class="text-muted">DD in favor of Principal, Maitreyi College</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Important Information</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="note-box">
+                        <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Notes</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Fees are subject to revision by University of Delhi</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>All fees must be paid within stipulated time to avoid late fees</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Security deposit is refundable after completion of course</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Additional charges may apply for examination and other university fees</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Scholarships and financial aid available for eligible students</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="info-card">
+                                <h5><i class="fas fa-phone me-2"></i>Fee Payment Helpline</h5>
+                                <p><strong>Phone:</strong> +91 11 1234 5680<br>
+                                <strong>Email:</strong> fees@maitreyi.ac.in<br>
+                                <strong>Timing:</strong> Monday - Friday, 9:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-card">
+                                <h5><i class="fas fa-download me-2"></i>Quick Downloads</h5>
+                                <div class="d-grid gap-2">
+                                    <a href="#" class="download-btn" onclick="downloadFile('fee-receipt.pdf')">
+                                        <i class="fas fa-file-invoice me-2"></i>Fee Receipt Format
+                                    </a>
+                                    <a href="#" class="download-btn" onclick="downloadFile('scholarship-form.pdf')">
+                                        <i class="fas fa-hand-holding-usd me-2"></i>Scholarship Form
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+        });
+
+        function loadNavigation() {
+            fetch('../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function downloadFile(filename) {
+            showNotification(`Downloading ${filename}...`, 'info');
+            
+            // Simulate download
+            setTimeout(() => {
+                showNotification(`${filename} downloaded successfully!`, 'success');
+            }, 1500);
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 300px;
+            `;
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

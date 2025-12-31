@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Departments - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/science/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .department-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .department-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .department-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .department-body {
+            padding: 30px;
+        }
+        .course-list {
+            list-style: none;
+            padding: 0;
+        }
+        .course-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .course-list li:hover {
+            padding-left: 10px;
+            color: var(--primary-color);
+        }
+        .course-list li:last-child {
+            border-bottom: none;
+        }
+        .seats-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+        .faculty-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .faculty-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(10px);
+        }
+        .faculty-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .feature-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .apply-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .apply-btn:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Science Departments</h1>
+                    <p class="lead">Explore our world-class science programs and research opportunities</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Admission</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Departments</a></li>
+                            <li class="breadcrumb-item active text-white">Science</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Departments Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-flask me-2"></i>Science at Maitreyi College</h3>
+                        <p>Our Science departments are committed to fostering scientific temper, research aptitude, and analytical thinking among students. With state-of-the-art laboratories and experienced faculty, we provide an environment that encourages innovation and discovery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments List -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Science Departments</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h4>Physics</h4>
+                            <p class="mb-0">Exploring the fundamental laws of nature</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Physics</span>
+                                    <span class="seats-badge">45 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Physics</span>
+                                    <span class="seats-badge">60 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Physical Sciences</span>
+                                    <span class="seats-badge">60 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Well-equipped Laboratories</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Research Projects</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Guest Lectures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h4>Chemistry</h4>
+                            <p class="mb-0">Understanding molecular interactions</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Chemistry</span>
+                                    <span class="seats-badge">45 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Chemistry</span>
+                                    <span class="seats-badge">60 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Applied Chemistry</span>
+                                    <span class="seats-badge">40 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Modern Laboratory</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Industry Tie-ups</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Publications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h4>Botany</h4>
+                            <p class="mb-0">Study of plant life and ecosystems</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Botany</span>
+                                    <span class="seats-badge">40 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Botany</span>
+                                    <span class="seats-badge">50 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Life Sciences</span>
+                                    <span class="seats-badge">50 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Herbarium</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Botanical Garden</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Research Grants</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h4>Zoology</h4>
+                            <p class="mb-0">Exploring animal life and behavior</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Zoology</span>
+                                    <span class="seats-badge">40 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Zoology</span>
+                                    <span class="seats-badge">50 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Animal Sciences</span>
+                                    <span class="seats-badge">35 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Museum</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Field Work</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Wildlife Projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>Mathematics</h4>
+                            <p class="mb-0">The language of the universe</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Mathematics</span>
+                                    <span class="seats-badge">50 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Mathematics</span>
+                                    <span class="seats-badge">45 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Applied Mathematics</span>
+                                    <span class="seats-badge">40 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Mathematics Lab</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Competitions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Research Papers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="department-card">
+                        <div class="department-header">
+                            <div class="department-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>Computer Science</h4>
+                            <p class="mb-0">Digital innovation and technology</p>
+                        </div>
+                        <div class="department-body">
+                            <h5>Programs Offered</h5>
+                            <ul class="course-list">
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. (Hons.) Computer Science</span>
+                                    <span class="seats-badge">60 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>B.Sc. Program Computer Science</span>
+                                    <span class="seats-badge">60 Seats</span>
+                                </li>
+                                <li>
+                                    <span><i class="fas fa-book me-2"></i>Data Science</span>
+                                    <span class="seats-badge">40 Seats</span>
+                                </li>
+                            </ul>
+                            <h5 class="mt-4">Department Highlights</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Computer Labs</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Coding Club</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Hackathons</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Meet Our Science Faculty</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/physics-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Rajesh Kumar</h6>
+                            <small class="text-muted">Head, Physics Department</small>
+                            <p class="mb-0 small">20+ years of research experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/chemistry-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Priya Singh</h6>
+                            <small class="text-muted">Head, Chemistry Department</small>
+                            <p class="mb-0 small">Expert in Organic Chemistry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="faculty-item">
+                        <img src="https://picsum.photos/seed/botany-prof/100/100.jpg" alt="Faculty" class="faculty-avatar">
+                        <div>
+                            <h6 class="mb-1">Dr. Amit Sharma</h6>
+                            <small class="text-muted">Head, Botany Department</small>
+                            <p class="mb-0 small">Plant Taxonomy Specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="feature-box">
+                        <h3><i class="fas fa-info-circle me-2"></i>Eligibility Criteria</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Minimum 60% aggregate in 10+2 with Science stream</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Physics, Chemistry, Mathematics/Biology compulsory for honors courses</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>English core subject mandatory</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Age relaxation as per government norms</li>
+                        </ul>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="../admission/support.html" class="apply-btn">
+                            <i class="fas fa-graduation-cap me-2"></i>Apply for Science Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+        });
+
+        function loadNavigation() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

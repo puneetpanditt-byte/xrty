@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Committees - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/committees/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .committee-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        .committee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .committee-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+        .committee-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .committee-body {
+            padding: 30px;
+        }
+        .committee-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .committee-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .committee-item h6 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .committee-item p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: white;
+            opacity: 0.3;
+        }
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(10px);
+        }
+        .year-badge {
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #004494;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Administrative Committees</h1>
+                    <p class="lead">Overseeing various committees for smooth functioning of college operations</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Governance</a></li>
+                            <li class="breadcrumb-item active text-white">Administrative Committees</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Administrative Committees</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">25+</div>
+                        <p class="text-muted">Active Committees</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">15+</div>
+                        <p class="text-muted">Student Committees</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">200+</div>
+                        <p class="text-muted">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">100+</div>
+                        <p class="text-muted">Annual Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committees List -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Administrative Committees</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Academic Council</h4>
+                            <div class="p-2">Governing academic policies and curriculum development</div>
+                        </div>
+                        <div class="committee-body">
+                            <h5>Key Responsibilities</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Curriculum Development</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Academic Standards</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Research Promotion</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Faculty Development</li>
+                            </ul>
+                            <h5 class="mt-4">Recent Activities</h5>
+                            <div class="activity-item">
+                                <h6>Academic Council Meeting</h6>
+                                <small class="text-muted">December 2025</small>
+                            </div>
+                            </div>
+                            <div class="activity-item">
+                                <h6>Curriculum Review</h6>
+                                <small class="text-muted">November 2025</small>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Discipline Committee</h4>
+                            <div class="p-2">Maintaining discipline and code of conduct</div>
+                        </div>
+                        <div class="committee-body">
+                            <h5>Key Responsibilities</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Code of Conduct</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Anti-ragging Measures</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Grievance Redressal</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Security</li>
+                            </ul>
+                            <h5 class="mt-4">Recent Activities</h5>
+                            <div class="activity-item">
+                                <h6>Discipline Committee Meeting</h6>
+                                <small class="text-muted">December 2025</small>
+                            </div>
+                            <div class="activity-item">
+                                <h6>Anti-Ragging Campaign</h6>
+                                <small class="text-muted">November 2025</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Green Campus Committee</h4>
+                            <div class="p-2">Environmental sustainability and green initiatives</div>
+                        </div>
+                        <div class="committee-body">
+                            <h5>Key Responsibilities</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Waste Management</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Energy Conservation</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Plantation Drives</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Awareness Programs</li>
+                            </ul>
+                            <h5 class="mt-4">Recent Activities</h5>
+                            <div class="activity-item">
+                                <h6>Green Campus Week</h6>
+                                <small class="text-muted">December 2025</small>
+                            </div>
+                            <div class="activity-item">
+                                <h6>Tree Plantation Drive</h6>
+                                <small class="text-muted">November 2025</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="p-2">Digital Infrastructure</div>
+                        </div>
+                        <div class="committee-body">
+                            <h5>Key Responsibilities</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Network Management</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Website Maintenance</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Digital Learning</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cyber Security</li>
+                            </ul>
+                            <h5 class="mt-4">Recent Activities</h5>
+                            <div class="action-item">
+                                <h6>IT Infrastructure Upgrade</h6>
+                                <small class="text-muted">December 2025</small>
+                            </div>
+                            <div class="activity-item">
+                                <h6>Cyber Security Workshop</h6>
+                                <small class="text-muted">November 2025</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="committee-card">
+                        <div class="committee-header">
+                            <div class="committee-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="p-2">Staff Welfare Committees</div>
+                        </div>
+                        <div class="committee-body">
+                            <h5>Key Responsibilities</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Staff Welfare Programs</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Health & Wellness</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Cultural Activities</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Sports Activities</li>
+                            </ul>
+                            <h5 class="mt-4">Recent Activities</h5>
+                            <div class="activity-item">
+                                <h6>Staff Welfare Meeting</h6>
+                                <small class="text-muted">December 2025</small>
+                            </div>
+                            <div class="activity-item">
+                                <h6>Health Check-up Camp</h6>
+                                <small class="text-muted">November 2025</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Administrative Office</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-card">
+                        <h4 class="mb-4">Administrative Office</h4>
+                        <p class="mb-4">For administrative queries, please contact our administrative office during working hours.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Address</h6>
+                                <p class="mb-0">Maitreyi College, Chanakya Puri, New Delhi - 110021</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Phone</h6>
+                                <p class="mb-0">+91 11 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Email</h6>
+                                <p class="mb-0">admin@maitreyi.ac.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Office Hours</h6>
+                                <p class="mb-0">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="mailto:admin@maitreyi.ac.in" class="btn btn-primary">
+                            <i class="fas fa-envelope me-2"></i>Contact Admin Office
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.committee-card, .contact-item, .stats-card, .activity-item').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        function loadNavigation() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/contact/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+        }
+        .btn-submit {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            background: #004494;
+            transform: translateY(-2px);
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: #004494;
+        }
+        .quick-links {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        .quick-links a {
+            display: block;
+            padding: 10px 0;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #eee;
+        }
+        .quick-links a:hover {
+            color: var(--primary-color);
+            padding-left: 10px;
+        }
+        .quick-links a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+                    <p class="lead">Get in touch with us for any queries or information</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item active text-white">Contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Address</h4>
+                        <p class="mb-0">Maitreyi College<br>
+                        Chanakya Puri<br>
+                        New Delhi - 110021<br>
+                        India</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p class="mb-0">
+                            <strong>Office:</strong> +91 11 1234 5678<br>
+                            <strong>Principal:</strong> +91 11 1234 5679<br>
+                            <strong>Admission:</strong> +91 11 1234 5680
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-card text-center">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p class="mb-0">
+                            <strong>General:</strong> info@maitreyi.ac.in<br>
+                            <strong>Admission:</strong> admission@maitreyi.ac.in<br>
+                            <strong>Principal:</strong> principal@maitreyi.ac.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form and Map -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-card">
+                        <h3 class="mb-4">Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-control" id="subject" name="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="admission">Admission Query</option>
+                                    <option value="academic">Academic Information</option>
+                                    <option value="administrative">Administrative Issue</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-card">
+                        <h3 class="mb-4">Find Us</h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8378421234567!2d77.12345678901234!3d28.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI2LjQiTiA3N8KwMDcnMjUuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Office Hours</h5>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <strong>Monday - Friday</strong><br>
+                                    9:00 AM - 5:00 PM
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-calendar-times"></i>
+                                </div>
+                                <div>
+                                    <strong>Saturday - Sunday</strong><br>
+                                    Closed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Contacts -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Important Contacts</h2>
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="contact-card">
+                        <h4 class="mb-4">Administrative Offices</h4>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <strong>Principal's Office</strong><br>
+                                Phone: +91 11 1234 5679<br>
+                                Email: principal@maitreyi.ac.in
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <strong>Vice Principal's Office</strong><br>
+                                Phone: +91 11 1234 5681<br>
+                                Email: vp@maitreyi.ac.in
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <strong>Admission Office</strong><br>
+                                Phone: +91 11 1234 5680<br>
+                                Email: admission@maitreyi.ac.in
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div>
+                                <strong>Library</strong><br>
+                                Phone: +91 11 1234 5682<br>
+                                Email: library@maitreyi.ac.in
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="quick-links">
+                        <h4 class="mb-4">Quick Links</h4>
+                        <a href="index.html"><i class="fas fa-home me-2"></i>Home</a>
+                        <a href="about/college.html"><i class="fas fa-university me-2"></i>About College</a>
+                        <a href="admission/courses.html"><i class="fas fa-graduation-cap me-2"></i>Courses Offered</a>
+                        <a href="about/about/about/about/departments.html"><i class="fas fa-building me-2"></i>Departments</a>
+                        <a href="gallery.html"><i class="fas fa-images me-2"></i>Gallery</a>
+                        <a href="admin/login.html"><i class="fas fa-sign-in-alt me-2"></i>Faculty Login</a>
+                    </div>
+                    <div class="contact-card mt-4">
+                        <h5>Follow Us</h5>
+                        <div class="social-links">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Handle contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Show success message
+                    showNotification('Thank you for your message! We will get back to you soon.', 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+        });
+
+        function loadNavigation() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 300px;
+            `;
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

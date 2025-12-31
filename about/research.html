@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre for Research - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/research/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .research-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .research-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .projects-header { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .publications-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .facilities-header { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        
+        .research-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .research-body {
+            padding: 30px;
+        }
+        .project-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .publication-item {
+            display: flex;
+            align-items: start;
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .publication-year {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 15px;
+            min-width: 60px;
+            text-align: center;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .facility-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .facility-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .facility-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .researcher-card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .researcher-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .researcher-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .badge-custom {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin: 5px;
+        }
+        .event-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Centre for Research</h1>
+                    <p class="lead">Fostering innovation, discovery, and academic excellence through cutting-edge research</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">About Us</a></li>
+                            <li class="breadcrumb-item active text-white">Centre for Research</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">100+</div>
+                        <p class="text-muted">Research Publications</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">25</div>
+                        <p class="text-muted">Ongoing Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">15</div>
+                        <p class="text-muted">Funded Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">50+</div>
+                        <p class="text-muted">Research Scholars</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Research Centre -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="research-card">
+                        <div class="research-header projects-header">
+                            <div class="research-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <h3>About Centre for Research</h3>
+                            <p class="mb-0">Advancing knowledge through innovative research</p>
+                        </div>
+                        <div class="research-body">
+                            <p class="lead">The Centre for Research at Maitreyi College is dedicated to fostering a culture of scientific inquiry and academic excellence among faculty and students.</p>
+                            <p>Our research centre provides a platform for interdisciplinary research, encouraging collaboration across various departments and with external institutions. We strive to create an environment that nurtures curiosity, innovation, and scholarly pursuit.</p>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <h5>Our Objectives</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Promote quality research activities</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Facilitate interdisciplinary collaboration</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Secure research funding and grants</li>
+                                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Organize seminars and workshops</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Research Areas</h5>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i>Environmental Sciences</li>
+                                        <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i>Material Science</li>
+                                        <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i>Biotechnology</li>
+                                        <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i>Data Science & Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ongoing Projects -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Ongoing Research Projects</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-header projects-header">
+                            <div class="research-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h4>Science Projects</h4>
+                        </div>
+                        <div class="research-body">
+                            <div class="project-item">
+                                <h5><i class="fas fa-atom text-primary me-2"></i>Nanomaterials for Environmental Applications</h5>
+                                <p class="mb-2">Development of nanocomposite materials for water purification and environmental remediation.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Rajesh Kumar</small>
+                                    <div class="badge-custom">Funded</div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <h5><i class="fas fa-dna text-success me-2"></i>Medicinal Plant Research</h5>
+                                <p class="mb-2">Phytochemical analysis and biological activities of traditional medicinal plants.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Priya Singh</small>
+                                    <div class="badge-custom">DST Funded</div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <h5><i class="fas fa-calculator text-warning me-2"></i>Mathematical Modeling in Biology</h5>
+                                <p class="mb-2">Computational models for understanding complex biological systems and disease spread.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Amit Sharma</small>
+                                    <div class="badge-custom">Internal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="research-card">
+                        <div class="research-header publications-header">
+                            <div class="research-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h4>Humanities & Social Sciences</h4>
+                        </div>
+                        <div class="research-body">
+                            <div class="project-item">
+                                <h5><i class="fas fa-landmark text-info me-2"></i>Women's Studies and Gender Equality</h5>
+                                <p class="mb-2">Socio-economic impact of education on women empowerment in urban and rural settings.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Anita Sharma</small>
+                                    <div class="badge-custom">UGC Funded</div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <h5><i class="fas fa-globe text-danger me-2"></i>Globalization and Cultural Identity</h5>
+                                <p class="mb-2">Impact of globalization on traditional cultural practices and identity formation.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Sunita Rao</small>
+                                    <div class="badge-custom">ICSSR Funded</div>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <h5><i class="fas fa-comments text-secondary me-2"></i>Language and Communication</h5>
+                                <p class="mb-2">Evolution of language in digital age and its impact on interpersonal communication.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Principal Investigator: Dr. Meera Patel</small>
+                                    <div class="badge-custom">Internal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Publications -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Recent Publications</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="research-card">
+                        <div class="research-header publications-header">
+                            <div class="research-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>2025 Publications</h4>
+                        </div>
+                        <div class="research-body">
+                            <div class="publication-item">
+                                <div class="publication-year">2025</div>
+                                <div>
+                                    <h6>"Novel Nanocomposite Materials for Water Purification: A Comprehensive Review"</h6>
+                                    <p class="mb-1"><strong>Authors:</strong> Dr. Rajesh Kumar, Dr. Priya Singh, et al.</p>
+                                    <p class="mb-0"><small class="text-muted">Journal of Environmental Nanotechnology, Vol. 12, Issue 3</small></p>
+                                </div>
+                            </div>
+                            <div class="publication-item">
+                                <div class="publication-year">2025</div>
+                                <div>
+                                    <h6>"Women Empowerment Through Education: A Study of Urban-Rural Dynamics"</h6>
+                                    <p class="mb-1"><strong>Authors:</strong> Dr. Anita Sharma, Dr. Sunita Rao</p>
+                                    <p class="mb-0"><small class="text-muted">International Journal of Gender Studies, Vol. 8, Issue 2</small></p>
+                                </div>
+                            </div>
+                            <div class="publication-item">
+                                <div class="publication-year">2025</div>
+                                <div>
+                                    <h6>"Mathematical Modeling of Disease Spread: A Computational Approach"</h6>
+                                    <p class="mb-1"><strong>Authors:</strong> Dr. Amit Sharma, Dr. Vikram Desai</p>
+                                    <p class="mb-0"><small class="text-muted">Computational Biology Journal, Vol. 15, Issue 1</small></p>
+                                </div>
+                            </div>
+                            <div class="publication-item">
+                                <div class="publication-year">2024</div>
+                                <div>
+                                    <h6>"Phytochemical Analysis of Traditional Medicinal Plants of North India"</h6>
+                                    <p class="mb-1"><strong>Authors:</strong> Dr. Priya Singh, Dr. Meera Patel</p>
+                                    <p class="mb-0"><small class="text-muted">Journal of Ethnopharmacology, Vol. 320, December 2024</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Facilities -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Research Facilities</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h5>Advanced Labs</h5>
+                        <p class="text-muted">State-of-the-art laboratories equipped with modern instrumentation for research in various disciplines.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h5>Digital Library</h5>
+                        <p class="text-muted">Access to thousands of e-journals, databases, and research publications for comprehensive literature review.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h5>Computing Facility</h5>
+                        <p class="text-muted">High-performance computing systems for data analysis, modeling, and simulation research.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5>Research Lounge</h5>
+                        <p class="text-muted">Collaborative workspace for researchers to discuss ideas and work on joint projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Researchers -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Lead Researchers</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="researcher-card">
+                        <img src="https://picsum.photos/seed/researcher1/150/150.jpg" alt="Researcher" class="researcher-avatar">
+                        <div>
+                            <h5>Dr. Rajesh Kumar</h5>
+                            <p class="text-muted mb-1">Head, Department of Physics</p>
+                            <p class="mb-2"><strong>Specialization:</strong> Material Science, Nanotechnology</p>
+                            <p class="mb-0"><small>15+ research publications, 3 funded projects</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="researcher-card">
+                        <img src="https://picsum.photos/seed/researcher2/150/150.jpg" alt="Researcher" class="researcher-avatar">
+                        <div>
+                            <h5>Dr. Priya Singh</h5>
+                            <p class="text-muted mb-1">Head, Department of Botany</p>
+                            <p class="mb-2"><strong>Specialization:</strong> Biotechnology, Phytochemistry</p>
+                            <p class="mb-0"><small>20+ research publications, 2 funded projects</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="researcher-card">
+                        <img src="https://picsum.photos/seed/researcher3/150/150.jpg" alt="Researcher" class="researcher-avatar">
+                        <div>
+                            <h5>Dr. Anita Sharma</h5>
+                            <p class="text-muted mb-1">Department of Political Science</p>
+                            <p class="mb-2"><strong>Specialization:</strong> Women's Studies, Gender Equality</p>
+                            <p class="mb-0"><small>12+ research publications, 4 funded projects</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="researcher-card">
+                        <img src="https://picsum.photos/seed/researcher4/150/150.jpg" alt="Researcher" class="researcher-avatar">
+                        <div>
+                            <h5>Dr. Amit Sharma</h5>
+                            <p class="text-muted mb-1">Department of Mathematics</p>
+                            <p class="mb-2"><strong>Specialization:</strong> Mathematical Modeling, Computational Biology</p>
+                            <p class="mb-0"><small>18+ research publications, 2 funded projects</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Research Events & Workshops</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="event-card">
+                        <h5><i class="fas fa-calendar me-2"></i>National Conference on Interdisciplinary Research</h5>
+                        <p class="mb-2">Date: February 15-16, 2026</p>
+                        <p class="mb-0">A platform for researchers from various disciplines to present their findings and collaborate on future projects.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event-card">
+                        <h5><i class="fas fa-chalkboard-teacher me-2"></i>Research Methodology Workshop</h5>
+                        <p class="mb-2">Date: January 20, 2026</p>
+                        <p class="mb-0">Hands-on workshop on advanced research methodologies and data analysis techniques for early-career researchers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.research-card, .project-item, .publication-item, .facility-item, .researcher-card, .stats-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animate statistics on scroll
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        function loadNavigation() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stats-number');
+            statNumbers.forEach(stat => {
+                const target = stat.textContent;
+                const number = parseInt(target.replace(/\D/g, ''));
+                const suffix = target.replace(/\d/g, '');
+                let current = 0;
+                const increment = number / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= number) {
+                        current = number;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 30);
+            });
+        }
+    </script>
+</body>
+</html>

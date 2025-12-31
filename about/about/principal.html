@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Principal's Desk - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .principal-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .principal-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .principal-card:hover {
+            transform: translateY(-5px);
+        }
+        .principal-image {
+            height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .message-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        .achievement-item {
+            padding: 20px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .achievement-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-4 fw-bold">From Principal's Desk</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">About Us</a></li>
+                            <li class="breadcrumb-item active text-white">Principal's Desk</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section class="principal-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4">
+                    <div class="principal-card">
+                        <img src="https://picsum.photos/seed/principal/600/400.jpg" alt="Principal" class="principal-image">
+                        <div class="p-4">
+                            <h3 class="text-dark">Dr. Anita Sharma</h3>
+                            <p class="text-muted mb-1">Principal</p>
+                            <p class="text-muted mb-3">Maitreyi College, University of Delhi</p>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary"><i class="fas fa-envelope fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-phone fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">A Message from the Principal</h2>
+                    <p class="lead">Welcome to Maitreyi College, a place where excellence meets empowerment!</p>
+                    <p>As we navigate through the dynamic landscape of higher education, Maitreyi College continues to stand as a beacon of academic excellence and women's empowerment. Our commitment to providing quality education that goes beyond textbooks has made us one of the most sought-after institutions in the University of Delhi.</p>
+                    <p>We believe in nurturing not just bright minds, but also responsible citizens who will contribute meaningfully to society. Our dedicated faculty, state-of-the-art infrastructure, and vibrant campus life create an ecosystem where every student can discover her potential and chase her dreams.</p>
+                    <p>As we move forward, we remain committed to our core values of integrity, innovation, and inclusivity. Together, we shall continue to scale new heights and create a future where our students lead with confidence and compassion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">College at a Glance</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">2500+</div>
+                        <p class="text-muted">Students</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">150+</div>
+                        <p class="text-muted">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">20+</div>
+                        <p class="text-muted">Courses</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">A+</div>
+                        <p class="text-muted">NAAC Grade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal's Vision -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="message-box position-relative">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <h3 class="mb-4">Our Vision for the Future</h3>
+                        <p class="fs-5">"Education is not preparation for life; education is life itself. At Maitreyi College, we strive to create an environment where learning is a joyous journey of discovery, where every student finds her voice, and where dreams transform into reality."</p>
+                        <p class="text-muted mt-3">- Dr. Anita Sharma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Initiatives -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Initiatives</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="achievement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h5>Academic Excellence</h5>
+                                <p>Strengthening our academic programs with innovative teaching methodologies and research opportunities to foster critical thinking and intellectual growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="achievement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-success text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h5>Digital Transformation</h5>
+                                <p>Embracing cutting-edge technology to enhance learning experiences and prepare students for the challenges of the digital age.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="achievement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-warning text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <h5>Global Perspective</h5>
+                                <p>Fostering international collaborations and exchange programs to broaden students' horizons and create global citizens.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="achievement-item">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-info text-white rounded-circle p-3 me-3">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div>
+                                <h5>Social Responsibility</h5>
+                                <p>Inculcating values of social service and community engagement through various outreach programs and initiatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Recent Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-md-6 text-end">
+                            <h5>NAAC A+ Accreditation</h5>
+                            <p class="text-muted">Achieved highest grade in academic excellence and institutional quality</p>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <h5>Research Excellence Award</h5>
+                            <p class="text-muted">Recognized for outstanding research contributions and publications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-md-6 text-end">
+                            <h5>Best College Award</h5>
+                            <p class="text-muted">University of Delhi recognition for overall excellence and innovation</p>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                            <h5>Green Campus Initiative</h5>
+                            <p class="text-muted">Awarded for environmental sustainability and eco-friendly practices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Principal -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-4">Get in Touch</h3>
+                    <p class="mb-4">I believe in open communication and welcome your feedback, suggestions, and ideas. Feel free to reach out to me with any concerns or thoughts you may have about our college.</p>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="contact-info">
+                                <i class="fas fa-envelope fa-2x mb-2"></i>
+                                <p class="mb-0">Email</p>
+                                <p>principal@maitreyi.ac.in</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="contact-info">
+                                <i class="fas fa-phone fa-2x mb-2"></i>
+                                <p class="mb-0">Phone</p>
+                                <p>+91 11 1234 5678</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="contact-info">
+                                <i class="fas fa-clock fa-2x mb-2"></i>
+                                <p class="mb-0">Office Hours</p>
+                                <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="mailto:principal@maitreyi.ac.in" class="btn btn-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add smooth scroll animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.achievement-item, .timeline-item, .stats-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        function loadNavigation() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>

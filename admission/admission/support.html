@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Support - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/support/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .support-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .support-card:hover {
+            transform: translateY(-10px);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateX(10px);
+        }
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+        }
+        .timeline-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
+        }
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-question {
+            padding: 20px;
+            background: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover {
+            background: #004494;
+        }
+        .faq-answer {
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .step-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        .help-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .help-btn {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .help-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Admission Support</h1>
+                    <p class="lead">Comprehensive guidance and support for your admission journey</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">Admission</a></li>
+                            <li class="breadcrumb-item active text-white">Admission Support</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Services -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Admission Support Services</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="support-card">
+                        <div class="step-number">1</div>
+                        <h4>Counselling & Guidance</h4>
+                        <p>Professional career counselling to help you choose the right course based on your interests and aptitude.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Course Selection</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Career Guidance</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Eligibility Check</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="support-card">
+                        <div class="step-number">2</div>
+                        <h4>Application Assistance</h4>
+                        <p>Complete support with filling application forms, document preparation, and submission process.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Form Filling</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Document Verification</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Online Submission</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="support-card">
+                        <div class="step-number">3</div>
+                        <h4>Post-Admission Support</h4>
+                        <p>Assistance with fee payment, hostel allocation, and orientation programs.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Fee Payment</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Hostel Admission</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Orientation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Admission Support</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <h4 class="mb-4">Admission Office</h4>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Visit Us</h5>
+                                <p class="mb-0">Maitreyi College<br>Chanakya Puri, New Delhi - 110021</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p class="mb-0">+91 11 1234 5680<br>+91 11 1234 5681</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p class="mb-0">admission@maitreyi.ac.in<br>support@maitreyi.ac.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="support-card">
+                        <h4 class="mb-4">Office Hours</h4>
+                        <div class="timeline-item">
+                            <h5><i class="fas fa-calendar me-2"></i>Monday - Friday</h5>
+                            <p class="mb-0">9:00 AM - 5:00 PM</p>
+                            <small class="text-muted">Admission Counter Open</small>
+                        </div>
+                        <div class="timeline-item">
+                            <h5><i class="fas fa-calendar me-2"></i>Saturday</h5>
+                            <p class="mb-0">9:00 AM - 2:00 PM</p>
+                            <small class="text-muted">Limited Services</small>
+                        </div>
+                        <div class="timeline-item">
+                            <h5><i class="fas fa-calendar-times me-2"></i>Sunday</h5>
+                            <p class="mb-0">Closed</p>
+                            <small class="text-muted">College Holiday</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5 class="mb-0">What are the eligibility criteria for admission?</h5>
+                            <i class="fas fa-chevron-down float-end"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Candidates must have passed 10+2 examination from a recognized board with minimum aggregate percentage as per Delhi University guidelines. Subject-specific requirements apply for honors courses.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5 class="mb-0">How can I apply for admission?</h5>
+                            <i class="fas fa-chevron-down float-end"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>You can apply online through the Delhi University admission portal or visit our admission office for assistance. Make sure to fill the form correctly and submit all required documents.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5 class="mb-0">What documents are required for admission?</h5>
+                            <i class="fas fa-chevron-down float-end"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Required documents include: 10th and 12th mark sheets, character certificate, transfer certificate, migration certificate (if applicable), passport size photographs, and category certificates (if applicable).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h5 class="mb-0">Is there any reservation policy?</h5>
+                            <i class="fas fa-chevron-down float-end"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Yes, reservations are available as per government norms for SC/ST/OBC/EWS/PwD categories. Detailed information is available in the college prospectus and university guidelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="help-box">
+                        <h3 class="mb-4">Need Help with Admission?</h3>
+                        <p class="mb-4">Our admission support team is here to help you with every step of the admission process. Don't hesitate to reach out!</p>
+                        <div class="d-flex gap-3 justify-content-center">
+                            <button class="btn help-btn" onclick="showContactForm()">
+                                <i class="fas fa-comments me-2"></i>Chat with Us
+                            </button>
+                            <button class="btn help-btn" onclick="showCallbackForm()">
+                                <i class="fas fa-phone me-2"></i>Request Callback
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Links -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Important Links</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h5>Delhi University</h5>
+                        <p class="text-muted">Official DU admission portal</p>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Visit Website</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h5>Admission Form</h5>
+                        <p class="text-muted">Download application form</p>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Download PDF</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h5>Fee Structure</h5>
+                        <p class="text-muted">View detailed fee structure</p>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">View Fees</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="step-card">
+                        <div class="step-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h5>Prospectus</h5>
+                        <p class="text-muted">Download college prospectus</p>
+                        <a href="#" class="btn btn-primary btn-sm mt-2">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+        });
+
+        function loadNavigation() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.display === 'none') {
+                answer.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        function showContactForm() {
+            showNotification('Opening chat support...', 'info');
+            // In a real application, this would open a chat interface
+        }
+
+        function showCallbackForm() {
+            showNotification('Callback request form opening...', 'info');
+            // In a real application, this would open a callback form
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 300px;
+            `;
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

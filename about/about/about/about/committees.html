@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committees and Societies - Maitreyi College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../../../../../assets/css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/seed/committees/1920/400.jpg') center/cover;
+            opacity: 0.2;
+        }
+        .committee-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .committee-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .committee-header {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .academic-header { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .cultural-header { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .sports-header { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .administrative-header { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        
+        .committee-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .committee-body {
+            padding: 30px;
+        }
+        .member-list {
+            list-style: none;
+            padding: 0;
+        }
+        .member-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .member-list li:hover {
+            padding-left: 10px;
+            background: #f8f9fa;
+            margin: 0 -15px;
+            padding-left: 25px;
+            padding-right: 15px;
+        }
+        .member-list li:last-child {
+            border-bottom: none;
+        }
+        .member-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .activity-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .activity-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .tab-content {
+            margin-top: 30px;
+        }
+        .nav-pills .nav-link {
+            border-radius: 25px;
+            padding: 10px 25px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-pills .nav-link.active {
+            background: var(--primary-color);
+        }
+        .badge-custom {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin: 5px;
+        }
+        .society-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .society-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .society-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .event-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .event-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Navigation -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold mb-4">Committees and Societies</h1>
+                    <p class="lead">Explore our diverse committees and student societies that foster holistic development</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="../../../../../index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="text-white">About Us</a></li>
+                            <li class="breadcrumb-item active text-white">Committees and Societies</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">25+</div>
+                        <p class="text-muted">Active Committees</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">15+</div>
+                        <p class="text-muted">Student Societies</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">200+</div>
+                        <p class="text-muted">Faculty Members</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">100+</div>
+                        <p class="text-muted">Annual Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committee Navigation -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Browse Committees</h2>
+                <p class="text-muted">Click on any category to explore committees and their members</p>
+            </div>
+            <ul class="nav nav-pills justify-content-center mb-4" id="committeeTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="academic-tab" data-bs-toggle="tab" data-bs-target="#academic" type="button" role="tab">
+                        <i class="fas fa-graduation-cap me-2"></i>Academic
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="cultural-tab" data-bs-toggle="tab" data-bs-target="#cultural" type="button" role="tab">
+                        <i class="fas fa-palette me-2"></i>Cultural
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="sports-tab" data-bs-toggle="tab" data-bs-target="#sports" type="button" role="tab">
+                        <i class="fas fa-running me-2"></i>Sports
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="administrative-tab" data-bs-toggle="tab" data-bs-target="#administrative" type="button" role="tab">
+                        <i class="fas fa-cogs me-2"></i>Administrative
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="committeeTabContent">
+                <!-- Academic Committees -->
+                <div class="tab-pane fade show active" id="academic" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header academic-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <h4>Academic Council</h4>
+                                    <p class="mb-0">Governing academic policies</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Curriculum Development</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Academic Standards</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Research Promotion</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Faculty Development</li>
+                                    </ul>
+                                    <h5 class="mt-4">Members</h5>
+                                    <ul class="member-list">
+                                        <li>
+                                            <img src="https://picsum.photos/seed/member1/100/100.jpg" alt="Member" class="member-avatar">
+                                            <div>
+                                                <strong>Dr. Anita Sharma</strong><br>
+                                                <small class="text-muted">Principal (Chairperson)</small>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="https://picsum.photos/seed/member2/100/100.jpg" alt="Member" class="member-avatar">
+                                            <div>
+                                                <strong>Prof. Rajesh Kumar</strong><br>
+                                                <small class="text-muted">Vice Principal</small>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="https://picsum.photos/seed/member3/100/100.jpg" alt="Member" class="member-avatar">
+                                            <div>
+                                                <strong>Dr. Priya Singh</strong><br>
+                                                <small class="text-muted">Dean of Studies</small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header academic-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-microscope"></i>
+                                    </div>
+                                    <h4>Research Committee</h4>
+                                    <p class="mb-0">Promoting research excellence</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Research Projects</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Publications</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Seminars & Workshops</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Funding Applications</li>
+                                    </ul>
+                                    <h5 class="mt-4">Recent Activities</h5>
+                                    <div class="activity-item">
+                                        <h6>Research Methodology Workshop</h6>
+                                        <small class="text-muted">December 2025</small>
+                                    </div>
+                                    <div class="activity-item">
+                                        <h6>Faculty Research Presentation</h6>
+                                        <small class="text-muted">November 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header academic-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <h4>Examination Committee</h4>
+                                    <p class="mb-0">Ensuring fair evaluation</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Exam Scheduling</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Result Processing</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Malpractice Prevention</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Confidentiality</li>
+                                    </ul>
+                                    <h5 class="mt-4">Achievements</h5>
+                                    <div class="badge-custom">Zero Malpractice</div>
+                                    <div class="badge-custom">Timely Results</div>
+                                    <div class="badge-custom">Digital Evaluation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural Committees -->
+                <div class="tab-pane fade" id="cultural" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header cultural-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-theater-masks"></i>
+                                    </div>
+                                    <h4>Cultural Committee</h4>
+                                    <p class="mb-0">Nurturing artistic talents</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Annual Cultural Fest</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Talent Shows</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Workshops</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Inter-college Events</li>
+                                    </ul>
+                                    <h5 class="mt-4">Upcoming Events</h5>
+                                    <div class="event-card">
+                                        <h6><i class="fas fa-calendar me-2"></i>Rhapsody 2026</h6>
+                                        <p>Annual Cultural Festival - March 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header cultural-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-book-reader"></i>
+                                    </div>
+                                    <h4>Literary Society</h4>
+                                    <p class="mb-0">Promoting literature and debate</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Debating Competitions</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Literary Magazine</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Book Clubs</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Creative Writing</li>
+                                    </ul>
+                                    <h5 class="mt-4">Recent Publications</h5>
+                                    <div class="badge-custom">Literary Magazine</div>
+                                    <div class="badge-custom">Poetry Collection</div>
+                                    <div class="badge-custom">Debate Winners</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Committees -->
+                <div class="tab-pane fade" id="sports" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header sports-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-football-ball"></i>
+                                    </div>
+                                    <h4>Sports Committee</h4>
+                                    <p class="mb-0">Promoting sports excellence</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Sports Tournaments</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Athletic Meet</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Training Programs</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Infrastructure Development</li>
+                                    </ul>
+                                    <h5 class="mt-4">Sports Facilities</h5>
+                                    <div class="badge-custom">Basketball Court</div>
+                                    <div class="badge-custom">Badminton Hall</div>
+                                    <div class="badge-custom">Athletics Track</div>
+                                    <div class="badge-custom">Gymnasium</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header sports-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                    <h4>Wellness Committee</h4>
+                                    <p class="mb-0">Student health and wellbeing</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Health Camps</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Yoga Sessions</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Mental Health Support</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Nutrition Guidance</li>
+                                    </ul>
+                                    <h5 class="mt-4">Recent Initiatives</h5>
+                                    <div class="activity-item">
+                                        <h6>Mental Health Awareness Week</h6>
+                                        <small class="text-muted">December 2025</small>
+                                    </div>
+                                    <div class="activity-item">
+                                        <h6>Annual Health Check-up Camp</h6>
+                                        <small class="text-muted">November 2025</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Administrative Committees -->
+                <div class="tab-pane fade" id="administrative" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header administrative-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h4>Discipline Committee</h4>
+                                    <p class="mb-0">Maintaining campus discipline</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Code of Conduct</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Anti-ragging Measures</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Grievance Redressal</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Security</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header administrative-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <h4>Green Campus Committee</h4>
+                                    <p class="mb-0">Environmental sustainability</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Waste Management</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Energy Conservation</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Plantation Drives</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Awareness Programs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="committee-card">
+                                <div class="committee-header administrative-header">
+                                    <div class="committee-icon">
+                                        <i class="fas fa-laptop"></i>
+                                    </div>
+                                    <h4>IT Committee</h4>
+                                    <p class="mb-0">Digital infrastructure</p>
+                                </div>
+                                <div class="committee-body">
+                                    <h5>Key Responsibilities</h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-check text-success me-2"></i>Network Management</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Website Maintenance</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Digital Learning</li>
+                                        <li><i class="fas fa-check text-success me-2"></i>Cyber Security</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Societies -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Student Societies</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h5>Music Society</h5>
+                        <p class="text-muted">Classical and contemporary music performances</p>
+                        <div class="badge-custom">50+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h5>Art & Craft</h5>
+                        <p class="text-muted">Creative expression through visual arts</p>
+                        <div class="badge-custom">30+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h5>Photography Club</h5>
+                        <p class="text-muted">Capturing moments and stories</p>
+                        <div class="badge-custom">40+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h5>Debating Society</h5>
+                        <p class="text-muted">Developing oratory and critical thinking</p>
+                        <div class="badge-custom">35+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h5>Drama Club</h5>
+                        <p class="text-muted">Theatrical performances and street plays</p>
+                        <div class="badge-custom">45+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h5>Environment Club</h5>
+                        <p class="text-muted">Environmental awareness and action</p>
+                        <div class="badge-custom">60+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h5>Coding Club</h5>
+                        <p class="text-muted">Programming and tech innovation</p>
+                        <div class="badge-custom">55+ Members</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="society-card">
+                        <div class="society-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h5>Social Service</h5>
+                        <p class="text-muted">Community service and outreach</p>
+                        <div class="badge-custom">70+ Members</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation and footer
+            loadNavigation();
+            loadFooter();
+            
+            // Add animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.committee-card, .society-card, .stats-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        function loadNavigation() {
+            fetch('../../../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const nav = doc.querySelector('nav.navbar');
+                    const topBar = doc.querySelector('.top-bar');
+                    if (nav && document.getElementById('nav-placeholder')) {
+                        document.getElementById('nav-placeholder').innerHTML = topBar.outerHTML + nav.outerHTML;
+                    }
+                });
+        }
+
+        function loadFooter() {
+            fetch('../../../../../index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const footer = doc.querySelector('footer');
+                    if (footer && document.getElementById('footer-placeholder')) {
+                        document.getElementById('footer-placeholder').innerHTML = footer.outerHTML;
+                    }
+                });
+        }
+    </script>
+</body>
+</html>
