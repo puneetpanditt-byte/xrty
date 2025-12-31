@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - Maitreyi College</title>
+    <title>Admin Dashboard - SDGB COLLAGE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -50,7 +50,20 @@
         .content-card {
             background: white;
             border-radius: 10px;
+            padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-2px);
+        }
+        .highlight-section {
+            animation: highlightPulse 2s ease-in-out;
+        }
+        @keyframes highlightPulse {
+            0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
         }
         .recent-activity {
             max-height: 400px;
@@ -63,6 +76,44 @@
         }
         .activity-item:hover {
             background: #f8f9fa;
+        }
+        .photo-item {
+            overflow: hidden;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+        .pdf-item {
+            transition: background 0.3s ease;
+        }
+        .pdf-item:hover {
+            background: #f8f9fa;
+        }
+        .pdf-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .activity-item:last-child {
             border-bottom: none;
@@ -78,7 +129,7 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-university fa-3x mb-2"></i>
                         <h5>Admin Portal</h5>
-                        <small>Maitreyi College</small>
+                        <small>SDGB COLLAGE</small>
                     </div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -92,38 +143,18 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#departments">
-                                <i class="fas fa-building me-2"></i> Departments
+                            <a class="nav-link" href="#photos">
+                                <i class="fas fa-images me-2"></i> Photos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#faculty">
-                                <i class="fas fa-users me-2"></i> Faculty
+                            <a class="nav-link" href="#pdfs">
+                                <i class="fas fa-file-pdf me-2"></i> PDFs
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#students">
-                                <i class="fas fa-graduation-cap me-2"></i> Students
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">
-                                <i class="fas fa-images me-2"></i> Gallery
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#events">
-                                <i class="fas fa-calendar me-2"></i> Events
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pages">
-                                <i class="fas fa-file me-2"></i> Pages
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#settings">
-                                <i class="fas fa-cog me-2"></i> Settings
+                            <a class="nav-link" href="#logo-management">
+                                <i class="fas fa-image me-2"></i> Logo
                             </a>
                         </li>
                         <li class="nav-item mt-3">
@@ -155,8 +186,8 @@
                     </div>
                 </div>
 
-                <!-- Statistics Cards -->
-                <div class="row mb-4">
+                <!-- Dashboard Section -->
+                <div class="row mb-4" id="dashboard">
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="stat-card">
                             <div class="stat-icon bg-primary text-white">
@@ -202,10 +233,13 @@
                 <!-- Content Sections -->
                 <div class="row">
                     <!-- Recent Notices -->
-                    <div class="col-lg-8 mb-4">
+                    <div class="col-lg-8 mb-4" id="notices">
                         <div class="content-card">
-                            <div class="card-header bg-white border-bottom">
+                            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Recent Notices</h5>
+                                <button class="btn btn-sm btn-primary" data-action="add-notice">
+                                    <i class="fas fa-plus me-1"></i> Add Notice
+                                </button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -224,8 +258,9 @@
                                                 <td>27 Dec, 2025</td>
                                                 <td><span class="badge bg-success">Active</span></td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-sm btn-outline-primary" data-notice-action="edit" data-notice-id="1"><i class="fas fa-edit"></i></button>
+                                                    <button class="btn btn-sm btn-outline-info" data-notice-action="view" data-notice-id="1"><i class="fas fa-eye"></i></button>
+                                                    <button class="btn btn-sm btn-outline-danger" data-notice-action="delete" data-notice-id="1"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -233,8 +268,9 @@
                                                 <td>25 Dec, 2025</td>
                                                 <td><span class="badge bg-success">Active</span></td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-sm btn-outline-primary" data-notice-action="edit" data-notice-id="2"><i class="fas fa-edit"></i></button>
+                                                    <button class="btn btn-sm btn-outline-info" data-notice-action="view" data-notice-id="2"><i class="fas fa-eye"></i></button>
+                                                    <button class="btn btn-sm btn-outline-danger" data-notice-action="delete" data-notice-id="2"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -242,8 +278,9 @@
                                                 <td>15 Dec, 2025</td>
                                                 <td><span class="badge bg-warning">Draft</span></td>
                                                 <td>
-                                                    <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                                    <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    <button class="btn btn-sm btn-outline-primary" data-notice-action="edit" data-notice-id="3"><i class="fas fa-edit"></i></button>
+                                                    <button class="btn btn-sm btn-outline-info" data-notice-action="view" data-notice-id="3"><i class="fas fa-eye"></i></button>
+                                                    <button class="btn btn-sm btn-outline-danger" data-notice-action="delete" data-notice-id="3"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -308,6 +345,224 @@
                                             <small class="text-muted">15 new photos added - 2 days ago</small>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery Section -->
+                <div class="row mt-4" id="photos">
+                    <div class="col-lg-8 mb-4">
+                        <div class="content-card">
+                            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Photo Gallery</h5>
+                                <button class="btn btn-sm btn-primary" data-action="add-photo">
+                                    <i class="fas fa-plus me-1"></i> Add Photos
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-4">
+                                        <div class="photo-item position-relative">
+                                            <img src="https://picsum.photos/seed/college1/300/200.jpg" class="img-fluid rounded" alt="College Photo">
+                                            <div class="photo-overlay">
+                                                <button class="btn btn-sm btn-light" data-photo-action="view" data-photo-id="1">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-danger" data-photo-action="delete" data-photo-id="1">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted d-block mt-2">Campus View - 2 days ago</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="photo-item position-relative">
+                                            <img src="https://picsum.photos/seed/college2/300/200.jpg" class="img-fluid rounded" alt="College Photo">
+                                            <div class="photo-overlay">
+                                                <button class="btn btn-sm btn-light" data-photo-action="view" data-photo-id="2">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-danger" data-photo-action="delete" data-photo-id="2">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted d-block mt-2">Library - 3 days ago</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="photo-item position-relative">
+                                            <img src="https://picsum.photos/seed/college3/300/200.jpg" class="img-fluid rounded" alt="College Photo">
+                                            <div class="photo-overlay">
+                                                <button class="btn btn-sm btn-light" data-photo-action="view" data-photo-id="3">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-danger" data-photo-action="delete" data-photo-id="3">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted d-block mt-2">Sports Ground - 1 week ago</small>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-primary" data-action="add-photo">
+                                        <i class="fas fa-upload me-1"></i> Upload More Photos
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PDF Documents Section -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="content-card" id="pdfs">
+                            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">PDF Documents</h5>
+                                <button class="btn btn-sm btn-primary" data-action="add-pdf">
+                                    <i class="fas fa-plus me-1"></i> Add PDF
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="pdf-list">
+                                    <div class="pdf-item d-flex align-items-center mb-3 p-2 border rounded">
+                                        <div class="pdf-icon bg-danger text-white rounded p-2 me-3">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Annual Report 2024-25</h6>
+                                            <small class="text-muted">2.5 MB • Uploaded 2 days ago</small>
+                                        </div>
+                                        <div class="pdf-actions">
+                                            <button class="btn btn-sm btn-outline-primary" data-pdf-action="view" data-pdf-id="1">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" data-pdf-action="delete" data-pdf-id="1">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pdf-item d-flex align-items-center mb-3 p-2 border rounded">
+                                        <div class="pdf-icon bg-danger text-white rounded p-2 me-3">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Course Catalog 2025</h6>
+                                            <small class="text-muted">1.8 MB • Uploaded 1 week ago</small>
+                                        </div>
+                                        <div class="pdf-actions">
+                                            <button class="btn btn-sm btn-outline-primary" data-pdf-action="view" data-pdf-id="2">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" data-pdf-action="delete" data-pdf-id="2">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="pdf-item d-flex align-items-center mb-3 p-2 border rounded">
+                                        <div class="pdf-icon bg-danger text-white rounded p-2 me-3">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Admission Guidelines</h6>
+                                            <small class="text-muted">3.2 MB • Uploaded 2 weeks ago</small>
+                                        </div>
+                                        <div class="pdf-actions">
+                                            <button class="btn btn-sm btn-outline-primary" data-pdf-action="view" data-pdf-id="3">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger" data-pdf-action="delete" data-pdf-id="3">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-primary" data-action="add-pdf">
+                                        <i class="fas fa-file-upload me-1"></i> Upload PDF
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Management Section -->
+                <div class="row mt-4" id="logo-management">
+                    <div class="col-12">
+                        <div class="content-card">
+                            <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Logo Management</h5>
+                                <button class="btn btn-sm btn-primary" data-action="upload-logo">
+                                    <i class="fas fa-upload me-1"></i> Upload New Logo
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="logo-preview-section">
+                                            <h6 class="mb-3">Current Logo</h6>
+                                            <div class="logo-preview text-center p-3 border rounded bg-light">
+                                                <img src="../images/logo.png" alt="Current Logo" class="current-logo img-fluid mb-3" style="max-height: 150px;">
+                                                <p class="text-muted mb-2">Current logo displayed on website</p>
+                                                <small class="text-success">
+                                                    <i class="fas fa-check-circle me-1"></i>
+                                                    Active since: <span id="logo-date">December 27, 2025</span>
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="logo-details">
+                                            <h6 class="mb-3">Logo Information</h6>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="info-item">
+                                                        <label class="form-label">File Name:</label>
+                                                        <p class="form-control-plaintext">logo.png</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="info-item">
+                                                        <label class="form-label">File Size:</label>
+                                                        <p class="form-control-plaintext">45.2 KB</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="info-item">
+                                                        <label class="form-label">Dimensions:</label>
+                                                        <p class="form-control-plaintext">200 x 200 px</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="info-item">
+                                                        <label class="form-label">Format:</label>
+                                                        <p class="form-control-plaintext">PNG</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="alert alert-info">
+                                                <h6><i class="fas fa-info-circle me-2"></i>Logo Guidelines</h6>
+                                                <ul class="mb-0">
+                                                    <li>Recommended size: 200x200 pixels</li>
+                                                    <li>Format: PNG with transparent background</li>
+                                                    <li>Maximum file size: 2MB</li>
+                                                    <li>Logo will be automatically resized for responsive display</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-outline-warning me-2" data-action="preview-logo">
+                                        <i class="fas fa-eye me-1"></i> Preview on Website
+                                    </button>
+                                    <button class="btn btn-outline-danger" data-action="reset-logo">
+                                        <i class="fas fa-undo me-1"></i> Reset to Default
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -388,7 +643,20 @@
         // Initialize dashboard
         document.addEventListener('DOMContentLoaded', function() {
             const username = sessionStorage.getItem('username');
-            console.log('Welcome, ' + username + '!');
+            if (username) {
+                console.log('Welcome, ' + username + '!');
+                // Update welcome message
+                const welcomeElement = document.querySelector('.welcome-message');
+                if (welcomeElement) {
+                    welcomeElement.textContent = 'Welcome, ' + username;
+                }
+            }
+            
+            // Initialize sidebar navigation
+            initializeSidebarNavigation();
+            
+            // Handle hash fragment navigation
+            handleHashNavigation();
             
             // Simulate real-time updates
             setInterval(() => {
@@ -397,7 +665,444 @@
                     showNotification('New activity detected!', 'info');
                 }
             }, 30000);
+
+            // Add click handlers for quick actions
+            initializeQuickActions();
+            
+            // Initialize data refresh
+            initializeDataRefresh();
+            
+            // Initialize notice management
+            initializeNoticeManagement();
         });
+
+        // Initialize sidebar navigation
+        function initializeSidebarNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    window.location.hash = target;
+                    handleHashNavigation();
+                });
+            });
+
+            // Listen for hash changes
+            window.addEventListener('hashchange', function() {
+                handleHashNavigation();
+            });
+        }
+
+        // Handle hash fragment navigation
+        function handleHashNavigation() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                // Scroll to the section
+                const element = document.getElementById(hash);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // Highlight the section
+                        element.classList.add('highlight-section');
+                        setTimeout(() => {
+                            element.classList.remove('highlight-section');
+                        }, 2000);
+                    }, 500);
+                }
+            }
+            
+            // Update active nav link
+            updateActiveNavLink(hash);
+        }
+
+        // Update active navigation link
+        function updateActiveNavLink(hash) {
+            // Remove active class from all nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current section
+            const activeLink = document.querySelector(`.nav-link[href="#${hash}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            } else if (!hash) {
+                // Default to dashboard if no hash
+                const dashboardLink = document.querySelector('.nav-link[href="#dashboard"]');
+                if (dashboardLink) {
+                    dashboardLink.classList.add('active');
+                }
+            }
+        }
+
+        // Initialize notice management
+        function initializeNoticeManagement() {
+            // Handle notice actions
+            const noticeActions = document.querySelectorAll('[data-notice-action]');
+            noticeActions.forEach(action => {
+                action.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const actionType = this.dataset.noticeAction;
+                    const noticeId = this.dataset.noticeId;
+                    
+                    switch(actionType) {
+                        case 'edit':
+                            editNotice(noticeId);
+                            break;
+                        case 'delete':
+                            deleteNotice(noticeId);
+                            break;
+                        case 'view':
+                            viewNotice(noticeId);
+                            break;
+                    }
+                });
+            });
+
+            // Handle photo actions
+            const photoActions = document.querySelectorAll('[data-photo-action]');
+            photoActions.forEach(action => {
+                action.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const actionType = this.dataset.photoAction;
+                    const photoId = this.dataset.photoId;
+                    
+                    switch(actionType) {
+                        case 'view':
+                            viewPhoto(photoId);
+                            break;
+                        case 'delete':
+                            deletePhoto(photoId);
+                            break;
+                    }
+                });
+            });
+
+            // Handle PDF actions
+            const pdfActions = document.querySelectorAll('[data-pdf-action]');
+            pdfActions.forEach(action => {
+                action.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const actionType = this.dataset.pdfAction;
+                    const pdfId = this.dataset.pdfId;
+                    
+                    switch(actionType) {
+                        case 'view':
+                            viewPdf(pdfId);
+                            break;
+                        case 'delete':
+                            deletePdf(pdfId);
+                            break;
+                    }
+                });
+            });
+        }
+
+        // Edit notice function
+        function editNotice(noticeId) {
+            showNotification('Opening notice editor for ID: ' + noticeId, 'info');
+            // In a real application, this would open an edit modal or redirect to edit page
+        }
+
+        // Delete notice function
+        function deleteNotice(noticeId) {
+            if (confirm('Are you sure you want to delete this notice?')) {
+                showNotification('Deleting notice ID: ' + noticeId, 'warning');
+                // In a real application, this would make an API call to delete the notice
+                setTimeout(() => {
+                    showNotification('Notice deleted successfully!', 'success');
+                }, 1000);
+            }
+        }
+
+        // View notice function
+        function viewNotice(noticeId) {
+            showNotification('Opening notice ID: ' + noticeId, 'info');
+            // In a real application, this would open a modal or redirect to view page
+        }
+
+        // View photo function
+        function viewPhoto(photoId) {
+            showNotification('Opening photo viewer for ID: ' + photoId, 'info');
+            // In a real application, this would open a modal or lightbox
+        }
+
+        // Delete photo function
+        function deletePhoto(photoId) {
+            if (confirm('Are you sure you want to delete this photo?')) {
+                showNotification('Deleting photo ID: ' + photoId, 'warning');
+                // In a real application, this would make an API call to delete the photo
+                setTimeout(() => {
+                    showNotification('Photo deleted successfully!', 'success');
+                }, 1000);
+            }
+        }
+
+        // View PDF function
+        function viewPdf(pdfId) {
+            showNotification('Opening PDF viewer for ID: ' + pdfId, 'info');
+            // In a real application, this would open the PDF in a new tab or modal
+        }
+
+        // Delete PDF function
+        function deletePdf(pdfId) {
+            if (confirm('Are you sure you want to delete this PDF document?')) {
+                showNotification('Deleting PDF ID: ' + pdfId, 'warning');
+                // In a real application, this would make an API call to delete the PDF
+                setTimeout(() => {
+                    showNotification('PDF deleted successfully!', 'success');
+                }, 1000);
+            }
+        }
+
+        // Initialize quick actions
+        function initializeQuickActions() {
+            // Add notice
+            const addNoticeBtn = document.querySelector('[data-action="add-notice"]');
+            if (addNoticeBtn) {
+                addNoticeBtn.addEventListener('click', () => {
+                    showNotification('Opening notice editor...', 'info');
+                });
+            }
+
+            // Add gallery
+            const addGalleryBtn = document.querySelector('[data-action="add-gallery"]');
+            if (addGalleryBtn) {
+                addGalleryBtn.addEventListener('click', () => {
+                    showNotification('Opening gallery uploader...', 'info');
+                });
+            }
+
+            // Add photo
+            const addPhotoBtn = document.querySelector('[data-action="add-photo"]');
+            if (addPhotoBtn) {
+                addPhotoBtn.addEventListener('click', () => {
+                    showNotification('Opening photo uploader...', 'info');
+                });
+            }
+
+            // Add PDF
+            const addPdfBtn = document.querySelector('[data-action="add-pdf"]');
+            if (addPdfBtn) {
+                addPdfBtn.addEventListener('click', () => {
+                    showNotification('Opening PDF uploader...', 'info');
+                });
+            }
+
+            // Upload logo
+            const uploadLogoBtn = document.querySelector('[data-action="upload-logo"]');
+            if (uploadLogoBtn) {
+                uploadLogoBtn.addEventListener('click', () => {
+                    uploadLogo();
+                });
+            }
+
+            // Preview logo
+            const previewLogoBtn = document.querySelector('[data-action="preview-logo"]');
+            if (previewLogoBtn) {
+                previewLogoBtn.addEventListener('click', () => {
+                    previewLogo();
+                });
+            }
+
+            // Reset logo
+            const resetLogoBtn = document.querySelector('[data-action="reset-logo"]');
+            if (resetLogoBtn) {
+                resetLogoBtn.addEventListener('click', () => {
+                    resetLogo();
+                });
+            }
+
+            // View students
+            const viewStudentsBtn = document.querySelector('[data-action="view-students"]');
+            if (viewStudentsBtn) {
+                viewStudentsBtn.addEventListener('click', () => {
+                    showNotification('Loading student records...', 'info');
+                });
+            }
+
+            // View faculty
+            const viewFacultyBtn = document.querySelector('[data-action="view-faculty"]');
+            if (viewFacultyBtn) {
+                viewFacultyBtn.addEventListener('click', () => {
+                    showNotification('Loading faculty records...', 'info');
+                });
+            }
+        }
+
+        // Initialize data refresh
+        function initializeDataRefresh() {
+            // Refresh statistics every 5 minutes
+            setInterval(() => {
+                updateStatistics();
+            }, 300000);
+        }
+
+        // Update statistics
+        function updateStatistics() {
+            // Simulate updating stats
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const currentValue = parseInt(stat.textContent.replace(/[^0-9]/g, ''));
+                const change = Math.floor(Math.random() * 10) - 5; // Random change between -5 and 5
+                const newValue = Math.max(0, currentValue + change);
+                
+                // Animate the change
+                animateValue(stat, currentValue, newValue, 1000);
+            });
+        }
+
+        // Animate value change
+        function animateValue(element, start, end, duration) {
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                
+                // Determine suffix
+                const text = element.textContent;
+                const suffix = text.replace(/[0-9]/g, '');
+                element.textContent = Math.floor(current) + suffix;
+            }, 16);
+        }
+
+        // Logo Management Functions
+        function uploadLogo() {
+            // Create file input element
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/png,image/jpeg,image/jpg';
+            fileInput.style.display = 'none';
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    // Validate file
+                    if (file.size > 2 * 1024 * 1024) {
+                        showNotification('File size must be less than 2MB', 'danger');
+                        return;
+                    }
+                    
+                    if (!file.type.match('image.*')) {
+                        showNotification('Please select an image file', 'danger');
+                        return;
+                    }
+                    
+                    // Simulate upload
+                    showNotification('Uploading logo...', 'info');
+                    
+                    setTimeout(() => {
+                        // Update logo preview
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const logoImg = document.querySelector('.current-logo');
+                            if (logoImg) {
+                                logoImg.src = e.target.result;
+                            }
+                            
+                            // Update logo info
+                            updateLogoInfo(file);
+                            
+                            showNotification('Logo uploaded successfully!', 'success');
+                        };
+                        reader.readAsDataURL(file);
+                    }, 2000);
+                }
+            });
+            
+            // Trigger file selection
+            document.body.appendChild(fileInput);
+            fileInput.click();
+            document.body.removeChild(fileInput);
+        }
+
+        function previewLogo() {
+            showNotification('Opening website preview...', 'info');
+            
+            // In a real application, this would open the website in a new tab
+            setTimeout(() => {
+                window.open('../index.html', '_blank');
+            }, 1000);
+        }
+
+        function resetLogo() {
+            if (confirm('Are you sure you want to reset the logo to the default version?')) {
+                showNotification('Resetting logo to default...', 'warning');
+                
+                setTimeout(() => {
+                    // Reset to default logo
+                    const logoImg = document.querySelector('.current-logo');
+                    if (logoImg) {
+                        logoImg.src = '../images/logo.png';
+                    }
+                    
+                    // Reset logo info
+                    resetLogoInfo();
+                    
+                    showNotification('Logo reset to default successfully!', 'success');
+                }, 1500);
+            }
+        }
+
+        function updateLogoInfo(file) {
+            // Update file name
+            const fileName = document.querySelector('.logo-details .form-control-plaintext');
+            if (fileName) {
+                fileName[0].textContent = file.name;
+            }
+            
+            // Update file size
+            const fileSize = document.querySelector('.logo-details .form-control-plaintext');
+            if (fileSize && fileSize[1]) {
+                fileSize[1].textContent = formatFileSize(file.size);
+            }
+            
+            // Update date
+            const logoDate = document.getElementById('logo-date');
+            if (logoDate) {
+                logoDate.textContent = new Date().toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            }
+        }
+
+        function resetLogoInfo() {
+            // Reset file name
+            const fileName = document.querySelector('.logo-details .form-control-plaintext');
+            if (fileName) {
+                fileName[0].textContent = 'logo.png';
+            }
+            
+            // Reset file size
+            const fileSize = document.querySelector('.logo-details .form-control-plaintext');
+            if (fileSize && fileSize[1]) {
+                fileSize[1].textContent = '45.2 KB';
+            }
+            
+            // Reset date
+            const logoDate = document.getElementById('logo-date');
+            if (logoDate) {
+                logoDate.textContent = 'December 27, 2025';
+            }
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
     </script>
 </body>
 </html>

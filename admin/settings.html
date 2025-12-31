@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Settings - SDGB COLLAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .settings-container {
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .settings-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            padding: 0.75rem;
+        }
+        .form-control:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+        }
+        .color-input-wrapper {
+            position: relative;
+        }
+        .color-input {
+            height: 50px;
+            cursor: pointer;
+        }
+        .color-preview {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            border: 2px solid #dee2e6;
+        }
+        .btn-save {
+            background: var(--primary-color, #0056b3);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-save:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .preview-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .preview-navbar {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-university fa-3x mb-2"></i>
+                        <h5>Admin Portal</h5>
+                        <small>SDGB COLLAGE</small>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html#notices">
+                                <i class="fas fa-bullhorn me-2"></i> Notices
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html#photos">
+                                <i class="fas fa-images me-2"></i> Photos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html#pdfs">
+                                <i class="fas fa-file-pdf me-2"></i> PDFs
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html#logo-management">
+                                <i class="fas fa-image me-2"></i> Logo
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="settings.html">
+                                <i class="fas fa-cog me-2"></i> Settings
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a class="nav-link text-danger" href="#" onclick="logout()">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 settings-container">
+                <!-- Header -->
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Global Settings</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="resetSettings()">
+                            <i class="fas fa-undo me-1"></i> Reset to Default
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Settings Form -->
+                <div class="settings-card">
+                    <h3 class="mb-4">Website Configuration</h3>
+                    <form id="settingsForm" action="/admin/update_settings" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="site_name" class="form-label">Website Name:</label>
+                                <input type="text" class="form-control" id="site_name" name="site_name" value="SDGB COLLAGE" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="contact_email" class="form-label">Contact Email:</label>
+                                <input type="email" class="form-control" id="contact_email" name="contact_email" value="info@sdgbcollege.edu" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="primary_color" class="form-label">Primary Color (Hex Code):</label>
+                                <div class="color-input-wrapper">
+                                    <input type="color" class="form-control color-input" id="primary_color" name="primary_color" value="#0056b3">
+                                    <div class="color-preview" id="colorPreview" style="background-color: #0056b3;"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="welcome_msg" class="form-label">Welcome Message:</label>
+                                <textarea class="form-control" id="welcome_msg" name="welcome_msg" rows="3">Welcome to SDGB COLLAGE - Excellence in Education</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="phone_number" class="form-label">Phone Number:</label>
+                                <input type="tel" class="form-control" id="phone_number" name="phone_number" value="+91 11 2345 6789">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="address" class="form-label">Address:</label>
+                                <input type="text" class="form-control" id="address" name="address" value="Chanakya Puri, New Delhi - 110021">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="facebook_url" class="form-label">Facebook URL:</label>
+                                <input type="url" class="form-control" id="facebook_url" name="facebook_url" value="https://facebook.com/sdgbcollege">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="twitter_url" class="form-label">Twitter URL:</label>
+                                <input type="url" class="form-control" id="twitter_url" name="twitter_url" value="https://twitter.com/sdgbcollege">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="instagram_url" class="form-label">Instagram URL:</label>
+                                <input type="url" class="form-control" id="instagram_url" name="instagram_url" value="https://instagram.com/sdgbcollege">
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="youtube_url" class="form-label">YouTube URL:</label>
+                                <input type="url" class="form-control" id="youtube_url" name="youtube_url" value="https://youtube.com/sdgbcollege">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="meta_description" class="form-label">Meta Description:</label>
+                            <textarea class="form-control" id="meta_description" name="meta_description" rows="2">SDGB COLLAGE - A premier institution offering quality education and holistic development opportunities.</textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="meta_keywords" class="form-label">Meta Keywords:</label>
+                            <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="education, college, university, SDGB, Delhi, higher education">
+                        </div>
+
+                        <button type="submit" class="btn btn-save">
+                            <i class="fas fa-save me-2"></i>Save Changes
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section">
+                    <h4 class="mb-3">Live Preview</h4>
+                    <div class="preview-navbar" id="previewNavbar">
+                        <h5 id="previewSiteName">SDGB COLLAGE</h5>
+                    </div>
+                    <div class="hero-preview p-3 border rounded bg-light mb-3">
+                        <p id="previewWelcome">Welcome to SDGB COLLAGE - Excellence in Education</p>
+                    </div>
+                    <div class="footer-preview p-3 border rounded">
+                        <p class="mb-1"><i class="fas fa-envelope me-2"></i><span id="previewEmail">info@sdgbcollege.edu</span></p>
+                        <p class="mb-1"><i class="fas fa-phone me-2"></i><span id="previewPhone">+91 11 2345 6789</span></p>
+                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i><span id="previewAddress">Chanakya Puri, New Delhi - 110021</span></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize settings
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSettings();
+            initializePreview();
+            initializeColorPicker();
+        });
+
+        function loadSettings() {
+            // In a real application, this would fetch settings from the server
+            const settings = {
+                site_name: 'SDGB COLLAGE',
+                contact_email: 'info@sdgbcollege.edu',
+                primary_color: '#0056b3',
+                welcome_msg: 'Welcome to SDGB COLLAGE - Excellence in Education',
+                phone_number: '+91 11 2345 6789',
+                address: 'Chanakya Puri, New Delhi - 110021',
+                facebook_url: 'https://facebook.com/sdgbcollege',
+                twitter_url: 'https://twitter.com/sdgbcollege',
+                instagram_url: 'https://instagram.com/sdgbcollege',
+                youtube_url: 'https://youtube.com/sdgbcollege',
+                meta_description: 'SDGB COLLAGE - A premier institution offering quality education and holistic development opportunities.',
+                meta_keywords: 'education, college, university, SDGB, Delhi, higher education'
+            };
+
+            // Populate form fields
+            Object.keys(settings).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.value = settings[key];
+                }
+            });
+        }
+
+        function initializePreview() {
+            // Update preview when form values change
+            const previewMappings = {
+                'site_name': 'previewSiteName',
+                'contact_email': 'previewEmail',
+                'welcome_msg': 'previewWelcome',
+                'phone_number': 'previewPhone',
+                'address': 'previewAddress'
+            };
+
+            Object.keys(previewMappings).forEach(sourceId => {
+                const sourceElement = document.getElementById(sourceId);
+                const targetElement = document.getElementById(previewMappings[sourceId]);
+                
+                if (sourceElement && targetElement) {
+                    sourceElement.addEventListener('input', function() {
+                        targetElement.textContent = this.value;
+                    });
+                }
+            });
+        }
+
+        function initializeColorPicker() {
+            const colorInput = document.getElementById('primary_color');
+            const colorPreview = document.getElementById('colorPreview');
+            const previewNavbar = document.getElementById('previewNavbar');
+
+            colorInput.addEventListener('input', function() {
+                const color = this.value;
+                colorPreview.style.backgroundColor = color;
+                previewNavbar.style.backgroundColor = color;
+            });
+        }
+
+        function resetSettings() {
+            if (confirm('Are you sure you want to reset all settings to default values?')) {
+                loadSettings();
+                showNotification('Settings reset to default values', 'info');
+            }
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            notification.style.cssText = `
+                top: 20px;
+                right: 20px;
+                z-index: 9999;
+                min-width: 300px;
+            `;
+            notification.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('settingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            showNotification('Saving settings...', 'info');
+            
+            // Simulate API call
+            setTimeout(() => {
+                showNotification('Settings saved successfully!', 'success');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
